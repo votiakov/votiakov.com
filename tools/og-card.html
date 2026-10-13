@@ -3,28 +3,25 @@
 <head>
 <meta charset="utf-8">
 <title>OG card</title>
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #fbfbf9; color: #17171c; }
-  .card { box-sizing: border-box; width: 1200px; height: 630px; padding: 84px 96px; display: grid; grid-template-columns: 1fr auto; column-gap: 64px; align-items: center; font-family: "Inter", sans-serif; }
-  h1 { font-size: 76px; line-height: 1.05; margin: 0 0 22px; letter-spacing: -0.03em; font-weight: 650; }
-  .r { font-size: 36px; color: #4a4a52; margin: 0 0 40px; line-height: 1.3; }
-  .f { font-size: 26px; color: #5b5b64; line-height: 1.55; margin: 0; }
-  .u { position: absolute; left: 96px; bottom: 64px; font-size: 26px; color: #2a55a8; font-weight: 600; }
-  img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px #e5e5e0; }
-  .bar { position: absolute; left: 0; top: 0; width: 1200px; height: 10px; background: #17171c; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #0d0d0c; color: #ecebe6; }
+  .glow { position: absolute; right: -180px; top: -220px; width: 760px; height: 760px; background: radial-gradient(closest-side, rgba(255,79,31,.30), transparent); }
+  .card { position: relative; box-sizing: border-box; width: 1200px; height: 630px; padding: 76px 88px 64px; display: flex; flex-direction: column; justify-content: space-between; }
+  .k { font: 500 22px/1 "JetBrains Mono", monospace; letter-spacing: .06em; color: #ff6a3d; text-transform: uppercase; }
+  h1 { font: 600 70px/1.03 "Inter", sans-serif; letter-spacing: -0.04em; margin: 0; max-width: 980px; }
+  h1 em { white-space: nowrap; font: italic 400 78px/1 "Instrument Serif", serif; color: #ff6a3d; letter-spacing: -0.01em; }
+  .who { display: flex; align-items: center; gap: 22px; font: 400 26px/1.35 "Inter", sans-serif; color: #b6b4ac; }
+  .who b { color: #ecebe6; font-weight: 600; }
+  .who img { width: 84px; height: 84px; border-radius: 50%; background: #ff4f1f; }
 </style>
 </head>
 <body>
-<div class="bar"></div>
+<div class="glow"></div>
 <div class="card">
-  <div>
-    <h1>Andrii Votiakov</h1>
-    <p class="r">Software engineer, lead engineer, former CTO</p>
-    <p class="f">10+ years with production systems<br>Backend · cloud infrastructure · web data · AI</p>
-  </div>
-  <img src="/assets/photo.jpg" alt="">
+  <div class="k">votiakov.com</div>
+  <h1>I scrape the web at scale, build software products and <em>cut cloud bills.</em></h1>
+  <div class="who"><img src="/assets/portrait.webp" alt=""><div><b>Andrii Votiakov</b><br>Lead engineer and former CTO · Łódź, Poland</div></div>
 </div>
-<div class="u">votiakov.com</div>
 </body>
 </html>

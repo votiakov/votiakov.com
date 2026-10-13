@@ -71,4 +71,5 @@ Cloudflare Pages needs the domain's nameservers at Cloudflare for an apex domain
 - Add https://votiakov.com to the LinkedIn profile (Contact info → Website, and the Featured section).
 - Paste a page URL into https://www.linkedin.com/post-inspector/ to refresh the preview image (`og-image.png`).
 - After a CV change: `python3 scripts/cv/build_plain_cv.py` in the job-search repo, then copy `cv/plain/Andrii_Votiakov_CV.pdf` to `site/Andrii_Votiakov_CV.pdf`.
-- After a change to the photo or the card text: `sh tools/render.sh` rebuilds `og-image.png` and the icons.
+- After a change to the portrait or the card text: `sh tools/render.sh` rebuilds `og-image.png` and the icons.
+- fabla.si answers only on http (it redirects to fabla.pl). Set up HTTPS for fabla.si at the registrar, or change the link to https://fabla.pl.

@@ -16,7 +16,7 @@ shot() { "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-first-run
   --force-device-scale-factor=1 --virtual-time-budget=3000 --window-size="$2" --screenshot="$3" "http://127.0.0.1:$PORT/$1" >/dev/null 2>&1; }
 shot _og.html 1200,630 "$ROOT/site/og-image.png"
 shot _icon.html 600,600 "$TMP/icon600.png"
-magick "$TMP/icon600.png" -fuzz 10% -fill '#17171c' -draw 'color 0,0 floodfill' -draw 'color 599,0 floodfill' \
+magick "$TMP/icon600.png" -fuzz 10% -fill '#131312' -draw 'color 0,0 floodfill' -draw 'color 599,0 floodfill' \
   -draw 'color 0,599 floodfill' -draw 'color 599,599 floodfill' -resize 180x180 -strip "$ROOT/site/apple-touch-icon.png"
 magick "$TMP/icon600.png" -fuzz 2% -transparent white -resize 32x32 -strip "$ROOT/site/favicon-32.png"
 echo "og-image.png, apple-touch-icon.png, favicon-32.png rebuilt"
