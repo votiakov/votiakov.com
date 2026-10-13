@@ -5,7 +5,7 @@ Personal site of Andrii Votiakov. Static HTML and one CSS file, no build step, n
 - `site/index.html`: the whole site on one page. Hero with an animated Cartpie demo, six numbers, products (Cartpie, Fabla, mieszkanko, reducecost.cloud, Apify), three company stories with outcome visuals, how I work, now, writing, contact, background.
 - `site/assets/site.css`: the design system (light and dark, self-hosted Inter, Instrument Serif and JetBrains Mono).
 - `site/assets/products/`: product screenshots (1200×750 WebP). Re-take them when a product site changes.
-- `tools/og-card.html` and `tools/render.sh`: rebuild `site/og-image.png` and the icons with headless Chrome and ImageMagick.
+- `tools/og-card.html` and `tools/render.sh`: rebuild `site/og-image.png` with headless Chrome. The favicons are the portrait on the accent colour.
 - `RESEARCH.md`: what the best engineer and CTO sites do, and how this site uses it.
 - `DEPLOY.md`: how to publish on GitHub Pages or Cloudflare Pages, with the DNS records.
 
