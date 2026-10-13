@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Locket insurance platform · Andrii Votiakov</title>
+<meta name="description" content="Founding engineer, then CTO at Locket, a UK home insurance company. A 2-minute B2C insurance product, then a multi-tenant B2B insurance platform on EKS.">
+<link rel="canonical" href="https://votiakov.com/work/locket/">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrii Votiakov">
+<meta property="og:title" content="Locket: home insurance, from a B2C product to a B2B platform">
+<meta property="og:description" content="A policy in approximately 2 minutes, prices in 1 to 2 seconds, then a multi-tenant insurance platform on EKS with a database for each customer.">
+<meta property="og:url" content="https://votiakov.com/work/locket/">
+<meta property="og:image" content="https://votiakov.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<p class="crumb"><a href="/">← Andrii Votiakov</a></p>
+
+<main id="main">
+<h1 class="page-title">Locket: home insurance, from a B2C product to a B2B platform</h1>
+<p class="lede">Founding engineer and Head of Software Engineering 2020–2021 · CTO 2021–2024</p>
+
+<section aria-labelledby="context">
+  <h2 id="context">Context</h2>
+  <p>Locket is a UK home insurance company, regulated by the FCA. It sold policies directly and through price comparison sites. I built the first B2C product. Later, as CTO, I led the change to a B2B model and built a new platform for other insurers.</p>
+  <ul class="stats">
+    <li><b>~2 min</b><span>to buy a policy (other insurers: 15 min or more)</span></li>
+    <li><b>1–2 s</b><span>per price</span></li>
+    <li><b>30M+ rows</b><span>UK addresses loaded in ~1 min</span></li>
+    <li><b>~15</b><span>people in the team</span></li>
+  </ul>
+</section>
+
+<section aria-labelledby="b2c">
+  <h2 id="b2c">The B2C product</h2>
+  <ul>
+    <li><b>Pricing engine.</b> I wrote it in Elixir. It is a pipeline of pure functions, one step for each rating factor. It calls the data providers in parallel and returns a price in 1 to 2 seconds. When the customer changes the cover, the price changes at once.</li>
+    <li><b>Fewer questions.</b> External data providers and our own data APIs replaced most of the questions on the form.</li>
+    <li><b>Address search.</b> A UK address search that loads more than 30 million address rows in approximately 1 minute with streamed SQL.</li>
+    <li><b>Policy changes at any time.</b> Customers could change their policy as often as they wanted, with immediate pro-rated payments and refunds.</li>
+    <li><b>Events and reports.</b> A transactional event table with the money and compliance data for each change. From it, the system made the daily and monthly bordereaux for each underwriter. Each underwriter had different requirements.</li>
+    <li><b>Market data.</b> I collected competitor prices from price comparison sites with Python and Selenium. This data was the base of the pricing model. I also set up the AWS resources for the data scientist to train and serve the model.</li>
+  </ul>
+  <p class="tech">Elixir / Phoenix, Ruby on Rails, PostgreSQL, Kong, Heroku, AWS S3, Angular, Flutter</p>
+</section>
+
+<section aria-labelledby="b2b">
+  <h2 id="b2b">The B2B platform</h2>
+  <p>A multi-tenant, API-first insurance platform with a Flutter SDK. As CTO I was also the main engineer of this platform. I wrote the infrastructure, the services, the SDK and the product, and the team built with me. Large insurers did security reviews of it.</p>
+  <ul>
+    <li><b>Compute.</b> EKS. Karpenter on Fargate provisioned Spot nodes where possible. Replicas across availability zones, with horizontal autoscaling.</li>
+    <li><b>Delivery.</b> Terraform with one Terraform Cloud workspace for each environment. ArgoCD GitOps as an app of apps, with a Kustomize base and overlays. Two clusters: development and staging, and production.</li>
+    <li><b>Services.</b> Node.js and TypeScript, event-driven, with gRPC between services and Kafka for events.</li>
+    <li><b>Gateway.</b> Kong checked a JWT for each tenant, with a different salt for each tenant.</li>
+    <li><b>Data.</b> RDS PostgreSQL in high availability with a read replica. Each B2B customer had its own database.</li>
+    <li><b>Security.</b> Encryption in transit and at rest, AWS Secrets Manager, a Bugcrowd penetration test program and phishing simulations for all staff.</li>
+    <li><b>Recovery.</b> Backups of everything, and automated restore tests.</li>
+    <li><b>Install.</b> A customer could install the platform into its own AWS account in one step, with Terraform, ArgoCD and Kustomize.</li>
+  </ul>
+  <p class="tech">Node.js / TypeScript, gRPC, Kafka, PostgreSQL (RDS), Kong, EKS, Karpenter, Terraform, ArgoCD, AWS Secrets Manager, CloudWatch, Kubecost, Flutter</p>
+</section>
+
+<section aria-labelledby="team">
+  <h2 id="team">Team</h2>
+  <ul>
+    <li>Approximately 15 people in London and Łódź: 8 engineers, 2 data scientists, 3 designers, 1 QA engineer and 1 project manager.</li>
+    <li>I hired people, did code reviews and set the git process.</li>
+    <li>I started an on-call rotation with runbooks, scripts, a knowledge base and incident drills.</li>
+    <li>I presented the technology to investors and to the IT departments of insurers. I worked with the CEO, the CFO and the Chief Insurance Officer.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="results">
+  <h2 id="results">Company results</h2>
+  <ul>
+    <li>The company raised more than £1 million on Seedrs.</li>
+    <li>It won Home Insurance at the 2023 National Insurance Awards.</li>
+    <li>Thousands of customers paid for policies.</li>
+  </ul>
+</section>
+</main>
+
+<p class="next"><a href="/">← Home</a><a href="/work/basket/">Basket →</a><a href="/work/hero-labs/">Hero Labs →</a></p>
+
+<footer>
+  <span>© 2026 Andrii Votiakov</span>
+  <span><a href="mailto:[email hidden]">[email hidden]</a></span>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrii Votiakov · Software engineer, lead engineer, former CTO</title>
+<meta name="description" content="Andrii Votiakov is a software engineer in Łódź, Poland. Lead engineer, former CTO and two-time founding engineer. Backend systems, cloud infrastructure, web data collection and AI features.">
+<meta name="author" content="Andrii Votiakov">
+<link rel="canonical" href="https://votiakov.com/">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+
+<meta property="og:type" content="profile">
+<meta property="profile:first_name" content="Andrii">
+<meta property="profile:last_name" content="Votiakov">
+<meta property="og:site_name" content="Andrii Votiakov">
+<meta property="og:title" content="Andrii Votiakov · Software engineer, lead engineer, former CTO">
+<meta property="og:description" content="10+ years with production systems. Founding engineer two times, CTO of a UK insurance company, lead engineer of a data platform for 30,000+ online shops.">
+<meta property="og:url" content="https://votiakov.com/">
+<meta property="og:image" content="https://votiakov.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Andrii Votiakov, software engineer, lead engineer, former CTO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Andrii Votiakov · Software engineer, lead engineer, former CTO">
+<meta name="twitter:description" content="10+ years with production systems. Founding engineer two times, CTO of a UK insurance company, lead engineer of a data platform for 30,000+ online shops.">
+<meta name="twitter:image" content="https://votiakov.com/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andrii Votiakov",
+  "url": "https://votiakov.com/",
+  "image": "https://votiakov.com/assets/photo.jpg",
+  "jobTitle": "Software engineer, lead engineer, former CTO",
+  "email": "mailto:[email hidden]",
+  "address": { "@type": "PostalAddress", "addressLocality": "Łódź", "addressCountry": "PL" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Lodz University of Technology" },
+  "knowsLanguage": ["English", "Polish", "Ukrainian", "Russian"],
+  "knowsAbout": ["Backend systems", "Cloud infrastructure", "AWS", "Google Cloud", "Kubernetes", "Terraform", "Web data collection", "LLM agents", "Cloud cost reduction"],
+  "sameAs": ["https://www.linkedin.com/in/andriivotiakov/", "https://github.com/votiakov"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<header class="top">
+  <div>
+    <h1>Andrii Votiakov</h1>
+    <p class="role">Software engineer, lead engineer, former CTO</p>
+    <p class="where">Łódź, Poland · I work remotely</p>
+    <ul class="links">
+      <li><a href="mailto:[email hidden]">[email hidden]</a></li>
+      <li><a href="https://www.linkedin.com/in/andriivotiakov/" rel="me">LinkedIn</a></li>
+      <li><a href="https://github.com/votiakov" rel="me">GitHub</a></li>
+      <li><a href="/Andrii_Votiakov_CV.pdf">CV (PDF, 3 pages)</a></li>
+    </ul>
+  </div>
+  <picture>
+    <source srcset="/assets/photo.webp" type="image/webp">
+    <img class="photo" src="/assets/photo.jpg" width="112" height="112" alt="Photo of Andrii Votiakov">
+  </picture>
+</header>
+
+<main id="main">
+
+<section aria-labelledby="summary">
+  <h2 id="summary">Summary</h2>
+  <p>I am a software engineer with more than 10 years of experience with production systems. I was a founding engineer two times, the CTO of a UK insurance company and the lead engineer of a data platform.</p>
+  <p>I work mostly on backend systems, cloud infrastructure, web data collection and AI features. I ran production systems with more than 2,000 requests per second. Usually I own the full system: the design, the infrastructure, the operations and the cost. I also write code when I lead a team.</p>
+</section>
+
+<section aria-labelledby="work">
+  <h2 id="work">Selected work</h2>
+
+  <article class="case">
+    <h3>Basket: a data collection platform, built two times</h3>
+    <p class="sub">Lead engineer and technical owner · <span class="nw">2024–2026</span></p>
+    <p>Basket is a shopping app. It collects product and price data from more than 30,000 online shops. I was responsible for the data collection platform, the AI features and the infrastructure on AWS and GCP.</p>
+    <ul class="stats">
+      <li><b>85% → 95%+</b><span>success rate, old to new platform</span></li>
+      <li><b>25 s → 3 s</b><span>average time per page</span></li>
+      <li><b>−80%+</b><span>cost of data collection</span></li>
+      <li><b>~£14,000</b><span>lower cloud and data cost each month</span></li>
+    </ul>
+    <ul>
+      <li>In March 2026 I replaced the old platform with a new version that I designed and built in approximately two weeks. AI agents wrote the code to my design and under my review.</li>
+      <li>Each page goes through a sequence of fetch methods, the cheapest first. Traffic to paid proxy providers decreased by approximately 95%.</li>
+      <li>Measurements showed that blocking caused less than 5% of failed pages. So I built an LLM system that finds the cause of each type of extraction failure.</li>
+    </ul>
+    <p class="more"><a href="/work/basket/">Architecture, fetch sequence and cost details →</a></p>
+  </article>
+
+  <article class="case">
+    <h3>Locket: home insurance, from a B2C product to a B2B platform</h3>
+    <p class="sub">Founding engineer, then CTO · <span class="nw">2020–2024</span></p>
+    <p>Locket is a UK home insurance company, regulated by the FCA. I built the B2C product from the start. As CTO I designed and built a multi-tenant insurance platform for other insurers and led the team.</p>
+    <ul class="stats">
+      <li><b>~2 min</b><span>to buy a policy (other insurers: 15 min or more)</span></li>
+      <li><b>1–2 s</b><span>per price from the pricing engine</span></li>
+      <li><b>~15</b><span>people in the team</span></li>
+      <li><b>£1m+</b><span>raised by the company on Seedrs</span></li>
+    </ul>
+    <ul>
+      <li>The B2B platform ran on EKS with Terraform and ArgoCD. Each B2B customer had its own PostgreSQL database.</li>
+      <li>A customer could install the platform into its own AWS account in one step.</li>
+    </ul>
+    <p class="more"><a href="/work/locket/">B2C product and B2B platform details →</a></p>
+  </article>
+
+  <article class="case">
+    <h3>Hero Labs: an IoT platform for a smart water valve</h3>
+    <p class="sub">Founding engineer, Head of Engineering, later interim CTO · <span class="nw">2018–2020, 2023–2024</span></p>
+    <p>Hero Labs (now Watergate) makes Sonic, a smart water valve for homes. I designed and built the IoT platform, the backend and the mobile app from the start.</p>
+    <ul class="stats">
+      <li><b>1 s</b><span>telemetry interval for each device</span></li>
+      <li><b>£1m in 3 months</b><span>raised by the company with the first product version</span></li>
+    </ul>
+    <ul>
+      <li>MQTT on AWS IoT, device provisioning, over-the-air updates and telemetry every second.</li>
+      <li>A data platform where users labelled their own water events, so the data scientists could train the appliance model.</li>
+      <li>As interim CTO I moved the workloads from ECS to EKS at a lower cost.</li>
+    </ul>
+    <p class="more"><a href="/work/hero-labs/">Platform details →</a></p>
+  </article>
+</section>
+
+<section aria-labelledby="other">
+  <h2 id="other">Other systems with numbers</h2>
+  <ul class="facts">
+    <li>A data source on the SHEIN API. It updates 4.4 million products every day for approximately $350 per month.</li>
+    <li>Core parts of a visual product search over 25 million products, built with a small team. Grounding DINO, SAM2 and CLIP on GPU nodes, Weaviate as the vector database, approximately 800 products per minute.</li>
+    <li>A shopping assistant with one router and four specialist agents. Strict JSON contracts, and an evaluation for each version: golden question sets, routing accuracy and LLM-as-judge scores.</li>
+    <li>A product-feed service on LMDB. In a load test it served approximately 900 requests per second, with a p95 of 157 ms and no failures.</li>
+    <li>Cloud cost at Basket: AWS from $10,400 to $3,200 per month, BigQuery from £3,300 to £160 per month. I removed approximately 1,200 unused AWS resources and 100,000 lines of old code.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="products">
+  <h2 id="products">Own products</h2>
+  <div class="item">
+    <h3><a href="https://cartpie.com">Cartpie</a></h3>
+    <p>An API and MCP server for product data. It runs four extraction methods in parallel and keeps the result with the highest confidence. It uses the same fetch sequence as the Basket platform.</p>
+  </div>
+  <div class="item">
+    <h3><a href="https://reducecost.cloud">reducecost.cloud</a></h3>
+    <p>A cloud cost service for AWS, GCP, BigQuery, Firebase and Datadog. The client pays a part of the verified savings and nothing before.</p>
+  </div>
+  <div class="item">
+    <h3><a href="https://apify.com/native_emblem">Scrapers on the Apify Store</a></h3>
+    <p>SHEIN products, job data from ATS systems, app reviews and Google Trends.</p>
+  </div>
+</section>
+
+<section aria-labelledby="practice">
+  <h2 id="practice">How I work</h2>
+  <ul>
+    <li>I measure before I spend. At Basket, the data showed that less than 5% of failures were blocks. So the money went to extraction and not to more expensive proxies.</li>
+    <li>A fetch is successful only when the extractor gets the data: title, price and currency. The HTTP status is not enough.</li>
+    <li>A backup is not done until a restore test passes on a separate system.</li>
+    <li>All infrastructure is in Terraform, and alerts are code too.</li>
+    <li>AI agents write most of my code. I own the design and I review every change.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="experience">
+  <h2 id="experience">Experience</h2>
+
+  <div class="item">
+    <div class="item-head"><h3>Lead Engineer and Technical Owner</h3><span class="when">2024–2026</span></div>
+    <p class="co">Basket (wntd.ai) · Remote</p>
+    <p>Data collection platform, AI features and the infrastructure on AWS and GCP. Technical lead of a team with 2 mobile developers, 2 full-stack developers and 1 designer. I changed the team to agent-first development: repository instructions, a shared skill library and a model choice for each task.</p>
+    <p class="tech">AWS (Lambda, Step Functions, SQS, EKS), GCP (Cloud Run, Pub/Sub, BigQuery), Kubernetes with GPU nodes, Terraform, ArgoCD, PostgreSQL, MongoDB, Redis, Weaviate, LMDB, TypeScript / Node.js, Python, Puppeteer, OpenAI, Gemini (Vertex AI), Prometheus, Grafana</p>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><h3>Fractional CTO and own products</h3><span class="when">2024–now</span></div>
+    <p class="co">rēte consulting · Remote</p>
+    <p>My consulting business in Poland. I work as a fractional CTO for early-stage companies. The current clients are in e-commerce, property and logistics. I also build my own products: Cartpie, reducecost.cloud and the Apify scrapers.</p>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><h3>Chief Technology Officer</h3><span class="when">2021–2024</span></div>
+    <p class="co">Locket · London · Remote</p>
+    <p>CTO and also the main engineer of the B2B platform. I led a team of approximately 15 people: 8 engineers, 2 data scientists, 3 designers, 1 QA engineer and 1 project manager. I hired people, did code reviews and started an on-call rotation with runbooks and incident drills. The company won Home Insurance at the 2023 National Insurance Awards.</p>
+    <p class="tech">Node.js / TypeScript, gRPC, Kafka, PostgreSQL (RDS), Kong, EKS, Karpenter, Terraform, ArgoCD, Flutter</p>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><h3>Founding Engineer, Head of Software Engineering</h3><span class="when">2020–2021</span></div>
+    <p class="co">Locket · London · Remote</p>
+    <p>I built the B2C insurance product from the start: the pricing engine in Elixir, a UK address search over 30+ million rows, real-time policy changes and the reports for each underwriter.</p>
+    <p class="tech">Elixir / Phoenix, Ruby on Rails, PostgreSQL, Kong, Heroku, AWS S3, Python, Angular, Flutter</p>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><h3>Founding Engineer, then Head of Engineering. Later Interim CTO</h3><span class="when">2018–2020, 2023–2024</span></div>
+    <p class="co">Hero Labs (now Watergate) · London · Remote</p>
+    <p>I designed and built the IoT platform, the backend, the mobile app and the data platform. I ran engineering: data scientists, software engineers, a hardware engineer, lab engineers and an industrial designer. As interim CTO I moved the workloads to EKS and prepared the platform for external due diligence.</p>
+    <p class="tech">AWS (IoT Core, Lambda, DynamoDB, Kinesis, ECS, EKS), Terraform, ArgoCD, Elixir, Ruby on Rails, Python</p>
+  </div>
+
+  <div class="item">
+    <div class="item-head"><h3>Earlier</h3></div>
+    <ul>
+      <li>Neos, London, 2017–2018. Software engineer. Full-stack work on an AWS IoT platform for home insurance (Ruby, Elixir, TypeScript).</li>
+      <li>EngineArch, Łódź, 2016–2018. Software engineer. Tests, then full-stack work for UEFA and PKO BP. Each week I worked at the bank in Warsaw to deploy and debug (Rails, PostgreSQL, Redis, Angular, Ionic).</li>
+      <li>Self-employed, 2012–2016. Web developer. Websites and online shops, from design to hosting.</li>
+      <li>Competitive programming from age 12: national and international olympiads (Pascal, C/C++).</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="skills">
+  <h2 id="skills">Skills</h2>
+  <dl class="skills">
+    <dt>Cloud and infrastructure</dt><dd>AWS, GCP, Kubernetes (EKS, GKE, GPU nodes), Karpenter, Terraform, ArgoCD, Docker, Prometheus, Grafana, CloudWatch</dd>
+    <dt>Backend</dt><dd>TypeScript / Node.js, Python, Elixir, Ruby on Rails, gRPC, REST, Kafka, Pub/Sub, SQS</dd>
+    <dt>Data</dt><dd>PostgreSQL, BigQuery, Redis, MongoDB, DynamoDB, Firestore, Weaviate, LMDB</dd>
+    <dt>Web data collection</dt><dd>Headless Chrome and Puppeteer, proxy management, TLS fingerprints, parser ensembles, anti-bot diagnosis</dd>
+    <dt>AI</dt><dd>LLM agents and their evaluation, vector search, CLIP, Grounding DINO, SAM2, OpenAI, Gemini (Vertex AI), MCP, agent-assisted development</dd>
+  </dl>
+</section>
+
+<section aria-labelledby="education">
+  <h2 id="education">Education and languages</h2>
+  <ul>
+    <li>B.A.Sc. Computer Science, Lodz University of Technology.</li>
+    <li>Exchange semester in IT Management, Hanze University of Applied Sciences, Groningen.</li>
+    <li>English and Polish (professional), Ukrainian and Russian (native).</li>
+  </ul>
+</section>
+
+<section aria-labelledby="contact">
+  <h2 id="contact">Contact</h2>
+  <p>Email: <a href="mailto:[email hidden]">[email hidden]</a></p>
+  <p class="muted small">Also on <a href="https://www.linkedin.com/in/andriivotiakov/">LinkedIn</a> and <a href="https://github.com/votiakov">GitHub</a>. The <a href="/Andrii_Votiakov_CV.pdf">CV</a> has the same facts in 3 pages.</p>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2026 Andrii Votiakov</span>
+  <span>Updated October 2026</span>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Basket data collection platform · Andrii Votiakov</title>
+<meta name="description" content="How I built the Basket data collection platform two times: Kubernetes on EKS and GKE, then a rewrite on GCP. Fetch sequence, failure diagnostics and cost numbers.">
+<link rel="canonical" href="https://votiakov.com/work/basket/">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrii Votiakov">
+<meta property="og:title" content="Basket: a data collection platform, built two times">
+<meta property="og:description" content="Kubernetes on EKS and GKE, then a rewrite on GCP. Success rate 85% to 95%+, 25 s to 3 s per page, data collection cost 80%+ lower.">
+<meta property="og:url" content="https://votiakov.com/work/basket/">
+<meta property="og:image" content="https://votiakov.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<p class="crumb"><a href="/">← Andrii Votiakov</a></p>
+
+<main id="main">
+<h1 class="page-title">Basket: a data collection platform, built two times</h1>
+<p class="lede">Lead engineer and technical owner · 2024–2026</p>
+
+<section aria-labelledby="context">
+  <h2 id="context">Context</h2>
+  <p>Basket is a shopping app. Users save products from any online shop. The platform must get the price and the availability for each saved product URL, from more than 30,000 shops, without special code for each shop.</p>
+  <p>I joined in March 2024. The platform was live and other engineers had built it before me. I improved it for two years, then designed and built a new version and did the production cutover in March 2026. My scope grew to AWS, GCP, Firebase, MongoDB Atlas, BigQuery, the proxy infrastructure, data collection, product ingestion and a Kubernetes cluster with the vector database. I was the technical lead of a team with 2 mobile developers, 2 full-stack developers and 1 designer.</p>
+</section>
+
+<section aria-labelledby="problem">
+  <h2 id="problem">The problem</h2>
+  <ul>
+    <li>Most product pages are JavaScript apps. The first HTML is empty. A headless browser costs 10 to 50 times more than a plain request.</li>
+    <li>Anti-bot systems check the TLS fingerprint, the HTTP/2 settings and the header order of the client before they send any HTML.</li>
+    <li>Residential and mobile proxies help with IP reputation, but the price is per request. If every block goes to a paid proxy, the cost grows with the volume.</li>
+    <li>A page that loads may not contain the product. Some shops return status 200 for a bot challenge, return 404 for out-of-stock pages that still contain the product data, and redirect expired products to the home page.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="v1">
+  <h2 id="v1">Platform 1 (2024–2025): Kubernetes on EKS and GKE</h2>
+  <ul>
+    <li>Two EKS clusters: one for development and staging, one for production. Terraform Cloud with one workspace for each environment.</li>
+    <li>One ArgoCD installation manages all clusters. Each environment is an app of apps, with a Kustomize base and an overlay for each environment.</li>
+    <li>Karpenter provisions the nodes. General work, GPU work and batch jobs have separate node pools. The vector database runs on on-demand nodes that do not expire.</li>
+    <li>A browser farm of Puppeteer Chromes, with a queue limit that can change at runtime and horizontal autoscaling.</li>
+    <li>Alerts as code: CloudWatch alarms go through SNS and Lambda to Slack. They cover the Lambda success rate, Step Functions failures, queue age and the extraction success rate. Prometheus and Grafana show the rest.</li>
+    <li>The visual search ran on a separate GKE cluster: Weaviate with 3 replicas, each on its own node, and GPU node pools for the CLIP and re-ranker models.</li>
+    <li>Weaviate backups go to Cloud Storage. A separate cluster restores them, to prove that the restore works.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="v2">
+  <h2 id="v2">Platform 2 (2026): the rewrite on GCP</h2>
+  <p>After two years the architecture was the limit. Cost and performance work could not go further.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>Old platform</th><th>New platform</th></tr></thead>
+      <tbody>
+        <tr><td>Compute</td><td>80+ serverless functions at peak, Step Functions</td><td>One core library and a few Cloud Run services</td></tr>
+        <tr><td>Clouds</td><td>3</td><td>GCP</td></tr>
+        <tr><td>Data stores</td><td>5</td><td>1 PostgreSQL database and 1 BigQuery warehouse</td></tr>
+        <tr><td>One failure in the logs</td><td>8 to 10 log streams</td><td>One request, one trace</td></tr>
+        <tr><td>Success rate</td><td>~85%</td><td>95%+</td></tr>
+        <tr><td>Average time per page</td><td>~25 s in 2024, ~11 s before the cutover</td><td>~3 s</td></tr>
+        <tr><td>Cost of data collection</td><td>Baseline (2024)</td><td>80%+ lower</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li>The core library contains only business logic. It has no cloud dependencies. The infrastructure comes in through four interfaces: database, queue, storage and event sink. So the tests run without credentials.</li>
+    <li>A short orchestrator function replaced the old chain of functions and a Step Function with 35 states.</li>
+    <li>Cloud Run services for the API, the processor, the workers, the admin dashboard and a self-hosted render service. Pub/Sub between them, with retries.</li>
+    <li>One PostgreSQL row for each URL is the single source of truth. The mobile app reads it directly.</li>
+    <li>Each attempt writes a typed event to BigQuery. An execution ID connects all events of one request.</li>
+    <li>Before the cutover, the old and the new versions ran side by side on the same product batches. The new version had a better cost, time and success rate. Then I switched production and checked the dashboards, the live app and the tests.</li>
+  </ul>
+  <p>I built the new version in approximately two weeks. AI agents wrote the code to my design and under my review. The setup for this took one year: repository instructions, a shared skill library, read-only data access for the agents and a model choice for each task.</p>
+</section>
+
+<section aria-labelledby="ladder">
+  <h2 id="ladder">The fetch sequence</h2>
+  <p>All sources use one contract and one definition of success. The cheapest and most precise sources go first: data that the app already has, cached HTML, affiliate feeds and shop APIs. After that, a generic fetch goes through 5 cost levels:</p>
+  <ol class="ladder">
+    <li>A direct request.</li>
+    <li>An HTTP client that sends the same TLS 1.3 handshake, HTTP/2 settings and header order as a current Chrome.</li>
+    <li>Our own 4G mobile lines. After a block, the line gets a new IP address. The carrier allows this once in 6 minutes.</li>
+    <li>Self-hosted Chrome, first from a datacenter IP address, then through a dedicated 4G line.</li>
+    <li>Paid vendors, only for the hardest pages.</li>
+  </ol>
+  <p>No provider decides that it was successful. Every response goes to the same extractor. Four parsers run in parallel (LD+JSON, shop XPath, microdata and OpenGraph), and the result for each field comes from the parser with the highest confidence. Success means title, price and currency, or title and out of stock. A bot challenge goes to the next level. An out-of-stock 404 is a success. An expired redirect stops before the paid levels.</p>
+  <ul class="stats">
+    <li><b>~95%</b><span>less traffic to paid proxy providers</span></li>
+    <li><b>~97%</b><span>of pages need only our own infrastructure</span></li>
+    <li><b>$3,000 → $975</b><span>ScrapingBee cost per month</span></li>
+  </ul>
+</section>
+
+<section aria-labelledby="diagnostics">
+  <h2 id="diagnostics">Failure diagnostics</h2>
+  <p>For a long time we thought that most failed pages were blocks. When every attempt was measured by the extracted data, the result was different: blocking caused less than 5% of failed pages. Most failures were extraction errors. So the next work went to extraction.</p>
+  <ul>
+    <li>Trigger: the extractor gets the page, but not enough data. For example, there is no price.</li>
+    <li>Signature: HTTP status group, body size group, extraction method, extraction status and redirect state, hashed with the shop domain.</li>
+    <li>One LLM request for each shop and signature in 7 days. Thousands of pages that fail in the same way cost one request.</li>
+    <li>The model is Gemini Flash-Lite on Vertex AI, with a fixed JSON schema and temperature 0.1. It returns the page type, the product state, the block vendor, the cause of the failure and the location of each field (DOM selector, LD+JSON or Next.js data).</li>
+    <li>When the confidence is 0.75 or more, the system marks expired pages automatically and records known block vendors in the shop profile.</li>
+    <li>The results go into a knowledge base for each shop. The team sees it in the admin dashboard.</li>
+  </ul>
+  <p>The LLM explains failures. The production extraction uses the four parsers.</p>
+</section>
+
+<section aria-labelledby="cost">
+  <h2 id="cost">Cost work</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Area</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><td>AWS (first two months, 2024)</td><td>~$10,400 per month</td><td>~$3,200 per month</td></tr>
+        <tr><td>BigQuery</td><td>~£3,300 per month</td><td>~£160 per month</td></tr>
+        <tr><td>Firestore collection</td><td>~£2,166 per month</td><td>£1,275 per month</td></tr>
+        <tr><td>MongoDB Atlas</td><td>Oversized cluster and backups</td><td>~$700 per month less</td></tr>
+        <tr><td>Datadog</td><td>In use</td><td>Removed</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul>
+    <li>Total: approximately £14,000 per month.</li>
+    <li>One retry fix decreased daily Lambda calls from ~29,000 to ~670.</li>
+    <li>I removed approximately 1,200 unused AWS resources and 100,000 lines of old code.</li>
+    <li>The backend build time decreased from 12 to 5 minutes.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="other">
+  <h2 id="other">Other systems on the same platform</h2>
+  <ul>
+    <li><b>SHEIN data source.</b> It updates 4.4 million products every day for approximately $350 per month. To buy the same data from a data vendor would cost approximately $15,840 per month.</li>
+    <li><b>Visual product search.</b> With a small team, I built core parts of a search over 25 million products: Grounding DINO and SAM2 find the product in the image, CLIP makes the embedding, Weaviate stores it and a re-ranker sorts the results. Ingestion ran at approximately 800 products per minute. I wrote the orchestration service for this pipeline in Go.</li>
+    <li><b>Shopping assistant.</b> One router and four specialist agents with strict JSON contracts. Retrieval from several sources with semantic re-ranking. I wrote the evaluation together with the agents: golden question sets, routing accuracy and LLM-as-judge scores for each version. We chose the model for each task with A/B tests across OpenAI and Gemini.</li>
+    <li><b>Product-feed service.</b> A batch job builds a new LMDB store from affiliate feeds and swaps it in while the API continues to serve. Load test: 1,000 virtual users, approximately 900 requests per second, p50 53 ms, p95 157 ms, no failures.</li>
+  </ul>
+</section>
+</main>
+
+<p class="next"><a href="/">← Home</a><a href="/work/locket/">Locket →</a><a href="/work/hero-labs/">Hero Labs →</a></p>
+
+<footer>
+  <span>© 2026 Andrii Votiakov</span>
+  <span><a href="mailto:[email hidden]">[email hidden]</a></span>
+</footer>
+</div>
+</body>
+</html>

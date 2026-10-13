@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://votiakov.com/sitemap.xml

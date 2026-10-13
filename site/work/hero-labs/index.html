@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero Labs IoT platform · Andrii Votiakov</title>
+<meta name="description" content="Founding engineer, Head of Engineering and later interim CTO at Hero Labs (now Watergate). The IoT platform, backend, mobile app and data platform for the Sonic smart water valve.">
+<link rel="canonical" href="https://votiakov.com/work/hero-labs/">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Andrii Votiakov">
+<meta property="og:title" content="Hero Labs: an IoT platform for a smart water valve">
+<meta property="og:description" content="MQTT on AWS IoT, device provisioning, over-the-air updates, telemetry every second, and a data platform for appliance recognition.">
+<meta property="og:url" content="https://votiakov.com/work/hero-labs/">
+<meta property="og:image" content="https://votiakov.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<p class="crumb"><a href="/">← Andrii Votiakov</a></p>
+
+<main id="main">
+<h1 class="page-title">Hero Labs: an IoT platform for a smart water valve</h1>
+<p class="lede">Founding engineer, then Head of Engineering 2018–2020 · Interim CTO 2023–2024</p>
+
+<section aria-labelledby="context">
+  <h2 id="context">Context</h2>
+  <p>Hero Labs (now Watergate) makes Sonic, a smart water valve for homes. The founder and CEO asked me to design and build the platform from the start. Later I ran engineering. In 2023 the company asked me back as interim CTO.</p>
+  <p>The original Sonic ran on batteries, with no Wi-Fi or mains power at the valve. It talked to a hub over a custom radio protocol, and the hub connected to the IoT platform. Each device sent telemetry every second: water flow, internal and external temperature and water pressure.</p>
+  <ul class="stats">
+    <li><b>1 s</b><span>telemetry interval for each device</span></li>
+    <li><b>£1m in 3 months</b><span>raised by the company with the first product version</span></li>
+  </ul>
+</section>
+
+<section aria-labelledby="platform">
+  <h2 id="platform">The platform</h2>
+  <ul>
+    <li>AWS IoT over MQTT, with a broker fleet, device provisioning, over-the-air updates and telemetry at high event rates.</li>
+    <li>I built the cloud infrastructure, the backend and the mobile app.</li>
+    <li>The company got its first funding with a prototype that I built with one other engineer and an embedded engineer.</li>
+  </ul>
+  <p class="tech">AWS (IoT Core, Lambda, DynamoDB, Kinesis), Terraform, Elixir, Ruby on Rails, Python</p>
+</section>
+
+<section aria-labelledby="appliances">
+  <h2 id="appliances">Appliance recognition</h2>
+  <p>Each use of water (a tap, a shower, a washing machine) has its own pattern of flow and pressure. The goal was a model that finds the appliance for each water event. With it, the product can detect anomalies and leaks.</p>
+  <ul>
+    <li>The first training data came from lab tests. In the alpha and beta tests in real homes, this data was not sufficient.</li>
+    <li>The solution was a beta program where users labelled their own water events in the app. These labels became training data.</li>
+    <li>I built the full loop: the data lake and the ingestion pipelines for the data scientists, the labelling flow in the app, and the path from new labels to a new model release.</li>
+    <li>The model then assigned events to the correct appliance and detected anomalies and leaks.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="team">
+  <h2 id="team">Team</h2>
+  <p>I ran the engineering department: 2 data scientists, software engineers, a hardware engineer, lab engineers and an industrial designer.</p>
+</section>
+
+<section aria-labelledby="interim">
+  <h2 id="interim">Interim CTO, 2023–2024</h2>
+  <ul>
+    <li>I moved the workloads from ECS to EKS, with Terraform, ArgoCD GitOps and Kubernetes plugins.</li>
+    <li>I rightsized the workloads on EKS and added S3 lifecycle rules that move old telemetry to deep archive. The cost decreased and the platform scaled better.</li>
+    <li>CloudWatch metrics and alerts, and Prometheus and Grafana for cost and performance.</li>
+    <li>I started DevOps practices, did a security audit and prepared the platform for external due diligence.</li>
+  </ul>
+</section>
+</main>
+
+<p class="next"><a href="/">← Home</a><a href="/work/basket/">Basket →</a><a href="/work/locket/">Locket →</a></p>
+
+<footer>
+  <span>© 2026 Andrii Votiakov</span>
+  <span><a href="mailto:[email hidden]">[email hidden]</a></span>
+</footer>
+</div>
+</body>
+</html>
