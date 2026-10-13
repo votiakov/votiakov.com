@@ -381,3 +381,23 @@ footer.foot a { color: var(--ink-3); }
 .case.flip .outcome { order: -1; }
 @media (max-width: 960px) { .case.flip .outcome { order: 0; } }
 @media (prefers-reduced-motion: reduce) { .fill, .wave .w-line { animation: none; stroke-dashoffset: 0; } }
+
+/* Animation delays and bar widths (no inline styles) */
+.d0 { --d: 0s; }
+.d1 { --d: .12s; }
+.d2 { --d: .15s; }
+.d3 { --d: .24s; }
+.d4 { --d: .3s; }
+.d5 { --d: .36s; }
+.d6 { --d: .45s; }
+.d7 { --d: .48s; }
+.d8 { --d: .6s; }
+.d9 { --d: .75s; }
+.d10 { --d: .9s; }
+.d11 { --d: 1.05s; }
+.w12 { --w: 12%; }
+.w13 { --w: 13%; }
+.w20 { --w: 20%; }
+.w85 { --w: 85%; }
+.w95 { --w: 95%; }
+.w100 { --w: 100%; }
