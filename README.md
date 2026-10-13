@@ -2,8 +2,7 @@
 
 Personal site of Andrii Votiakov. Static HTML and one CSS file, no build step, no trackers.
 
-- `site/index.html`: the home page. Hero with the animated fetch ladder, results, products (Cartpie, Fabla, mieszkanko, reducecost.cloud, Apify), three case studies with SVG diagrams, how I work, now, writing, contact, background.
-- `site/work/{basket,locket,hero-labs}/`: the long case studies.
+- `site/index.html`: the whole site on one page. Hero with an animated Cartpie demo, six numbers, products (Cartpie, Fabla, mieszkanko, reducecost.cloud, Apify), three company stories with outcome visuals, how I work, now, writing, contact, background.
 - `site/assets/site.css`: the design system (light and dark, self-hosted Inter, Instrument Serif and JetBrains Mono).
 - `site/assets/products/`: product screenshots (1200×750 WebP). Re-take them when a product site changes.
 - `tools/og-card.html` and `tools/render.sh`: rebuild `site/og-image.png` and the icons with headless Chrome and ImageMagick.
@@ -17,4 +16,4 @@ python3 -m http.server 8000 --directory site
 # open http://localhost:8000
 ```
 
-Content rules: facts only from the career knowledge base, the plain CV and the product sites themselves. First person, plain words, no em dashes, no phone number or street address. Update the "Now" block when something changes, and keep its date current.
+Content rules: facts only from the career knowledge base, the plain CV and the product sites themselves. Employer work is described by role and outcome only: no internal architecture, vendors, costs or tooling of another company. First person, plain words, no em dashes, no phone number or street address. Update the "Now" block when something changes, and keep its date current.
