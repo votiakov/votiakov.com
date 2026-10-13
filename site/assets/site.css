@@ -343,7 +343,7 @@ footer.foot a { color: var(--ink-3); }
 
 /* Outcome panels next to each company story */
 .outcome { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: clamp(20px, 3vw, 32px); box-shadow: var(--shadow); }
-.o-k { font: 500 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); margin: 0 0 18px; }
+.outcome .o-k { font: 500 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); margin: 0 0 18px; }
 .race { display: grid; gap: 14px; }
 .lane { display: grid; grid-template-columns: 110px 1fr 64px; gap: 12px; align-items: center; font-size: 14.5px; }
 .lane .who-l { color: var(--ink-2); }
@@ -361,8 +361,8 @@ footer.foot a { color: var(--ink-3); }
 .award .cup-l { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linecap: round; }
 .award b { display: block; font-weight: 600; letter-spacing: -0.01em; }
 .award span { display: block; font-size: 14px; color: var(--ink-3); }
-.o-big { font: 600 clamp(60px, 7.4vw, 96px)/0.95 var(--sans); letter-spacing: -0.055em; margin: 0 0 18px; color: var(--ink); }
-.o-big span { display: block; font: 500 14px/1.4 var(--mono); letter-spacing: .02em; color: var(--accent-ink); margin-top: 10px; }
+.outcome .o-big { font: 600 clamp(60px, 7.4vw, 96px)/0.95 var(--sans); letter-spacing: -0.055em; margin: 0 0 18px; color: var(--ink); }
+.outcome .o-big span { display: block; font: 500 14px/1.4 var(--mono); letter-spacing: .02em; color: var(--accent-ink); margin-top: 10px; }
 .wave svg { width: 100%; height: 70px; }
 .w-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 0; }
 .wave svg { -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
@@ -375,7 +375,7 @@ footer.foot a { color: var(--ink-3); }
 .ba-v { font-size: 14.5px; color: var(--ink-3); text-align: right; }
 .ba-v b { color: var(--ink); font-weight: 600; }
 .ba-row .track { grid-column: 1 / -1; }
-.o-note { margin: 28px 0 0; font: 400 12px/1 var(--mono); color: var(--ink-3); display: flex; align-items: center; gap: 8px; }
+.outcome .o-note { margin: 28px 0 0; font: 400 12px/1 var(--mono); color: var(--ink-3); display: flex; align-items: center; gap: 8px; }
 .sw { display: inline-block; width: 18px; height: 6px; border-radius: 4px; background: var(--line-2); }
 .sw.acc { background: var(--accent); margin-left: 8px; }
 .case.flip .outcome { order: -1; }
