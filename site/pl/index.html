@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrii Votiakov · Lead engineer, były CTO, dane z internetu</title>
+<meta name="description" content="Andrii Votiakov, lead engineer i były CTO z Łodzi. Dwukrotnie founding engineer, CTO nagradzanego ubezpieczyciela, twórca Cartpie i Fabli. Rachunki za chmurę niższe nawet o 90%.">
+<link rel="canonical" href="https://votiakov.com/pl/">
+<link rel="alternate" hreflang="en" href="https://votiakov.com/">
+<link rel="alternate" hreflang="pl" href="https://votiakov.com/pl/">
+<link rel="alternate" hreflang="uk" href="https://votiakov.com/ua/">
+<link rel="alternate" hreflang="x-default" href="https://votiakov.com/">
+<meta name="theme-color" content="#f4f2ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrumentserif-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:site_name" content="Andrii Votiakov">
+<meta property="og:title" content="Andrii Votiakov · Zbieram dane z internetu na dużą skalę, tworzę produkty software'owe i tnę rachunki za chmurę">
+<meta property="og:description" content="Lead engineer i były CTO z Łodzi. Produkty, projekty i sposób pracy.">
+<meta property="og:url" content="https://votiakov.com/pl/">
+<meta property="og:image" content="https://votiakov.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andrii Votiakov",
+  "url": "https://votiakov.com/pl/",
+  "image": "https://votiakov.com/assets/portrait.webp",
+  "jobTitle": "Lead engineer and former CTO",
+  "address": { "@type": "PostalAddress", "addressLocality": "Łódź", "addressCountry": "PL" },
+  "knowsAbout": ["Web data collection", "Cloud infrastructure", "AWS", "GCP", "Kubernetes", "Cloud cost optimisation", "LLM systems"],
+  "sameAs": ["https://www.linkedin.com/in/andriivotiakov/", "https://github.com/votiakov", "https://apify.com/native_emblem"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="/pl/" aria-label="Andrii Votiakov, strona główna"><span class="avatar"><img src="/assets/portrait.webp" width="34" height="34" alt=""><i class="on" title="Otwarty na nową pracę"></i></span><span class="name">Andrii Votiakov</span></a>
+    <nav aria-label="Menu główne">
+      <ul>
+        <li class="opt"><a href="#built">Produkty</a></li>
+        <li class="opt"><a href="#work">Firmy</a></li>
+        <li class="opt"><a href="#approach">Podejście</a></li>
+        <li class="opt"><a href="#now">Teraz</a></li>
+        <li class="langs"><a href="/" hreflang="en" lang="en">EN</a><a href="/pl/" hreflang="pl" lang="pl" aria-current="page">PL</a><a href="/ua/" hreflang="uk" lang="uk">UA</a></li>
+        <li><a class="cta" href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <p class="status"><span class="dot" aria-hidden="true"></span>CTO, Engineering i współpraca fractional</p>
+      <h1 class="headline" id="h1">Zbieram dane z internetu na dużą skalę, tworzę produkty i <span class="serif">tnę rachunki za chmurę.</span></h1>
+      <p class="intro">Jestem lead engineerem i byłym CTO. Od ponad 10 lat buduję i utrzymuję systemy produkcyjne: dwa startupy jako <b>founding engineer</b>, nagradzany brytyjski ubezpieczyciel jako <b>CTO</b> i platforma danych, która czyta <b>ponad 30 000 sklepów internetowych</b>.</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Pracujmy razem <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn" href="#built">Zobacz, co buduję <span class="arr" aria-hidden="true">↓</span></a>
+      </div>
+      <div class="who">
+        <img src="/assets/portrait.webp" width="56" height="56" alt="Andrii Votiakov">
+        <p><b>Andrii Votiakov</b><br>Łódź · zdalnie, czas środkowoeuropejski</p>
+      </div>
+    </div>
+
+    <aside class="panel demo" aria-labelledby="demo-h">
+      <div class="panel-head"><span>Cartpie · moje API produktowe</span><span class="live">200 OK · 412 ms</span></div>
+      <h2 id="demo-h">Dowolny URL produktu na wejściu. Czysty JSON na wyjściu.</h2>
+      <div class="req"><span class="verb">POST</span><span class="path">/v1/extract</span><span class="url"><span class="typed">ikea.com/…/poang-armchair</span></span></div>
+      <div class="page" aria-hidden="true">
+        <div class="pg-bar"><i></i><i></i><i></i><span>ikea.com/…/poang-armchair</span></div>
+        <div class="pg-body">
+          <div class="pg-img fld d0">
+            <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M20 62 C18 40 22 22 34 16 C44 12 52 18 54 30 L56 46 L64 50 L60 62 Z" class="ch"/><path d="M24 62 L16 72 M58 62 L66 72" class="cl"/></svg>
+          </div>
+          <div class="pg-info">
+            <span class="fld f-brand d1">IKEA</span>
+            <span class="fld f-title d3">POÄNG Armchair, birch</span>
+            <span class="fld f-price d5">£129.00</span>
+            <span class="fld f-stock d7">In stock</span>
+            <span class="skel"></span><span class="skel s2"></span>
+          </div>
+        </div>
+        <div class="beam"></div>
+      </div>
+      <pre class="json"><code><span class="j d0">{ <i class="k">"data"</i>: {</span>
+<span class="j d2">    <i class="k">"title"</i>: <i class="s">"POÄNG Armchair, birch"</i>,</span>
+<span class="j d4">    <i class="k">"price"</i>: <i class="s">"129.00"</i>,</span>
+<span class="j d6">    <i class="k">"currency"</i>: <i class="s">"GBP"</i>,</span>
+<span class="j d8">    <i class="k">"availability"</i>: <i class="s">"InStock"</i>,</span>
+<span class="j d9">    <i class="k">"brand"</i>: <i class="s">"IKEA"</i>,</span>
+<span class="j d10">    <i class="k">"gtin"</i>: <i class="s">"07391440264259"</i></span>
+<span class="j d11">  }, <i class="k">"meta"</i>: { <i class="k">"duration_ms"</i>: <i class="n">412</i> } }</span></code></pre>
+      <div class="panel-stats">
+        <div><b>20+</b><span>dostrojonych sklepów, jeden schemat</span></div>
+        <div><b>412 ms</b><span>dla tego produktu</span></div>
+        <div><b>Gratis</b><span>nieudane zapytania i cache</span></div>
+      </div>
+      <a class="panel-link" href="https://cartpie.com" rel="noopener">Wypróbuj na cartpie.com ↗</a>
+    </aside>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="numbers-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="numbers-h">Praca <span class="serif">w liczbach</span></h2>
+      <p>Ponad 10 lat: dwa startupy od pierwszego commita, ubezpieczyciel, w którym kierowałem inżynierią, oraz systemy i produkty, za które odpowiadam.</p>
+    </div>
+    <div class="numbers">
+      <div><b>2×</b><span>founding engineer: brytyjski ubezpieczyciel i firma IoT</span><em>Locket · Hero Labs</em></div>
+      <div><b>£2m+</b><span>pozyskały te dwa startupy na platformach, które zbudowałem</span><em>Locket · Hero Labs</em></div>
+      <div><b>Zwycięstwo</b><span>Home Insurance, National Insurance Awards 2023, gdy byłem CTO</span><em>Locket</em></div>
+      <div><b>~15</b><span>inżynierów, data scientistów i projektantów w zespole, którym kierowałem</span><em>Locket</em></div>
+      <div><b>30 000+</b><span>sklepów internetowych codziennie czytanych przez platformę danych, za którą odpowiadałem</span><em>Basket</em></div>
+      <div><b>30–90%</b><span>mniej na rachunkach za chmurę i dane w firmach, z którymi pracuję</span><em>reducecost.cloud</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="built" aria-labelledby="built-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="built-h">Co <span class="serif">buduję i utrzymuję</span></h2>
+      <p>Moje własne produkty oraz firmy, które współtworzę jako współzałożyciel lub fractional CTO.</p>
+    </div>
+    <div class="products">
+      <a class="product" href="https://cartpie.com" rel="noopener">
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>cartpie.com</span></div><img src="/assets/products/cartpie.webp" width="1200" height="750" loading="lazy" alt="Strona główna Cartpie: dowolny URL produktu na wejściu, czyste dane na wyjściu"></div>
+        <div class="body">
+          <div class="top"><h3>Cartpie</h3><span class="tag">Założyciel</span></div>
+          <p>API i serwer MCP do danych produktowych. Wysyłasz dowolny URL produktu i dostajesz cenę, dostępność, warianty i GTIN w formacie JSON. Cztery metody ekstrakcji działają równolegle, a wygrywa wynik z najwyższą pewnością.</p>
+          <span class="go">cartpie.com ↗</span>
+        </div>
+      </a>
+      <a class="product" href="http://fabla.si" rel="noopener">
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>fabla.si</span></div><img src="/assets/products/fabla.webp" width="1200" height="750" loading="lazy" alt="Strona główna Fabli: koniec z wymyślaniem postów od zera"></div>
+        <div class="body">
+          <div class="top"><h3>Fabla</h3><span class="tag">Współzałożyciel</span></div>
+          <p>Planowanie treści z AI dla małych marek, po polsku i po angielsku. Poznaje firmę i odbiorców, pisze posty głosem marki i planuje publikacje. Moja ulubiona decyzja projektowa: anty-AI „humanizer” to osobny etap, który przepisuje gotowy szkic, więc możemy go testować i wymieniać jego model.</p>
+          <span class="go">fabla.si ↗</span>
+        </div>
+      </a>
+      <a class="product" href="https://mieszkanko.app" rel="noopener">
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>mieszkanko.app</span></div><img src="/assets/products/mieszkanko.webp" width="1200" height="750" loading="lazy" alt="Strona główna mieszkanko: szukanie mieszkania bez chaosu"></div>
+        <div class="body">
+          <div class="top"><h3>mieszkanko</h3><span class="tag">Fractional CTO</span></div>
+          <p>Szukanie mieszkania w Polsce bez chaosu. Ogłoszenia z Otodom i Gratki na jednej tablicy, podsumowania AI, śledzenie cen i mapa rzeczywistych cen transakcyjnych z oficjalnego rejestru GUGiK.</p>
+          <span class="go">mieszkanko.app ↗</span>
+        </div>
+      </a>
+      <a class="product" href="https://reducecost.cloud" rel="noopener">
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>reducecost.cloud</span></div><img src="/assets/products/reducecost.webp" width="1200" height="750" loading="lazy" alt="Strona główna reducecost.cloud: optymalizacja kosztów chmury, od 30 do 90 procent mniej"></div>
+        <div class="body">
+          <div class="top"><h3>reducecost.cloud</h3><span class="tag">Założyciel</span></div>
+          <p>Optymalizacja kosztów chmury opłacana ze zweryfikowanych oszczędności. Najpierw audyt tylko do odczytu, potem poprawki. Dotychczasowe wyniki: AWS taniej o 78% w 4 tygodnie, BigQuery o 72% w 3 tygodnie, Datadog o 90% w 2 tygodnie.</p>
+          <span class="go">reducecost.cloud ↗</span>
+        </div>
+      </a>
+    </div>
+    <p class="also"><b>Apify Store</b><span>Scrapery, które publikuję i utrzymuję: produkty SHEIN, oferty pracy z systemów ATS, recenzje aplikacji i Google Trends.</span><a href="https://apify.com/native_emblem" rel="noopener">apify.com ↗</a></p>
+  </div>
+</section>
+
+<section class="block" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="work-h">Firmy, które <span class="serif">współtworzyłem</span></h2>
+      <p>Dwa startupy od pierwszego commita i platforma danych aplikacji zakupowej. Co zrobiłem i co się zmieniło.</p>
+    </div>
+
+    <article class="case">
+      <div>
+        <p class="meta">Locket · 2020–2024 · Founding engineer, potem CTO</p>
+        <h3>Od pierwszej linijki kodu do CTO nagradzanego ubezpieczyciela</h3>
+        <p>Locket to brytyjski ubezpieczyciel domów nadzorowany przez FCA. Dołączyłem jako pierwszy inżynier i zbudowałem produkt, który kupowali klienci: polisa w około 2 minuty, cena w 1–2 sekundy.</p>
+        <p>Jako CTO poprowadziłem przejście na B2B. Zbudowaliśmy platformę multi-tenant dla innych ubezpieczycieli, z API i mobilnym SDK, którą klient mógł jednym krokiem zainstalować na własnym koncie w chmurze. Przeszła przeglądy bezpieczeństwa dużych ubezpieczycieli. Kierowałem zespołem około 15 osób i prezentowałem technologię inwestorom.</p>
+        <ul class="kpis">
+          <li><b>~2 min</b><span>na zakup polisy</span></li>
+          <li><b>£1m+</b><span>pozyskane na Seedrs</span></li>
+          <li><b>~15</b><span>osób w zespole</span></li>
+        </ul>
+      </div>
+      <div class="outcome">
+        <p class="o-k">Czas zakupu ubezpieczenia domu</p>
+        <div class="race">
+          <div class="lane"><span class="who-l">Locket</span><span class="track"><span class="fill acc w13"></span></span><b>~2 min</b></div>
+          <div class="lane"><span class="who-l">Inni ubezpieczyciele</span><span class="track"><span class="fill w100"></span></span><b>15+ min</b></div>
+        </div>
+        <div class="award">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 6h16v8a8 8 0 0 1-16 0z" class="cup"/><path d="M12 9H7v3a5 5 0 0 0 5 5M28 9h5v3a5 5 0 0 1-5 5M20 22v6M14 33h12" class="cup-l"/></svg>
+          <div><b>Zwycięzca, Home Insurance</b><span>National Insurance Awards 2023</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="case flip">
+      <div>
+        <p class="meta">Hero Labs (obecnie Watergate) · 2018–2020, 2023–2024 · Founding engineer, później interim CTO</p>
+        <h3>Platforma za inteligentnym zaworem wody</h3>
+        <p>Hero Labs produkuje Sonic, inteligentny zawór wody do domów. Zaprojektowałem i zbudowałem platformę od zera: chmurę urządzeń, backend i aplikację mobilną. Z pierwszą wersją firma pozyskała 1 mln funtów w 3 miesiące.</p>
+        <p>Zbudowałem też platformę danych, na której data scientists uczyli model rozpoznawać urządzenia i wykrywać wycieki, a użytkownicy oznaczali w aplikacji własne zdarzenia zużycia wody. Po latach firma poprosiła mnie o powrót jako interim CTO, żeby zmodernizować platformę i przygotować ją do due diligence.</p>
+        <ul class="kpis">
+          <li><b>£1m</b><span>pozyskane w 3 miesiące</span></li>
+          <li><b>1 s</b><span>telemetria z każdego urządzenia</span></li>
+        </ul>
+      </div>
+      <div class="outcome">
+        <p class="o-k">Pozyskane z pierwszą wersją, którą zbudowałem</p>
+        <p class="o-big">£1m <span>w 3 miesiące</span></p>
+        <div class="wave" aria-hidden="true">
+          <svg viewBox="0 0 400 70" preserveAspectRatio="none"><path class="w-line" d="M0 40 C 20 40, 25 22, 40 22 S 60 52, 80 46 S 100 18, 120 24 S 140 58, 160 50 S 180 30, 200 34 S 220 14, 240 20 S 260 56, 280 48 S 300 26, 320 30 S 340 52, 360 44 S 380 28, 400 30"/></svg>
+          <span class="w-lbl">przepływ, ciśnienie i temperatura wody co sekundę</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div>
+        <p class="meta">Basket (wntd.ai) · 2024–2026 · Lead engineer, właściciel techniczny</p>
+        <h3>Platforma danych, która czyta ponad 30 000 sklepów internetowych</h3>
+        <p>Basket to aplikacja zakupowa: użytkownicy zapisują produkty z dowolnego sklepu internetowego, a aplikacja śledzi cenę. Przez dwa lata odpowiadałem za platformę danych i kierowałem pięcioosobowym zespołem.</p>
+        <p>Potem zaprojektowałem nową wersję i przeniosłem na nią produkcję. Agenci AI napisali kod według mojego projektu i pod moim review, w około dwa tygodnie. Przed przełączeniem obie wersje działały równolegle na tych samych danych.</p>
+        <ul class="kpis">
+          <li><b>~£14k</b><span>miesięcznie mniej na rachunkach za chmurę i dane</span></li>
+        </ul>
+      </div>
+      <div class="outcome">
+        <p class="o-k">Przed i po nowej wersji</p>
+        <div class="ba">
+          <div class="ba-row"><span class="ba-l">Skuteczność</span><span class="ba-v">85% → <b>95%+</b></span><span class="track two"><span class="fill w85"></span><span class="fill acc w95"></span></span></div>
+          <div class="ba-row"><span class="ba-l">Czas na stronę</span><span class="ba-v">25 s → <b>3 s</b></span><span class="track two"><span class="fill w100"></span><span class="fill acc w12"></span></span></div>
+          <div class="ba-row"><span class="ba-l">Koszt zbierania danych</span><span class="ba-v"><b>80%+</b> mniej</span><span class="track two"><span class="fill w100"></span><span class="fill acc w20"></span></span></div>
+        </div>
+        <p class="o-note"><i class="sw"></i>przed <i class="sw acc"></i>po</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block" id="approach" aria-labelledby="approach-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="approach-h">Jak <span class="serif">pracuję</span></h2>
+      <p>Nawyki z ponad 10 lat budowania i utrzymywania systemów produkcyjnych.</p>
+    </div>
+    <ol class="beliefs">
+      <li><h3>Najpierw mierz, potem wydawaj.</h3><p>Oczywista przyczyna problemu często okazuje się błędna. Zanim przeznaczę pieniądze lub czas inżynierów na poprawkę, mierzę, gdzie naprawdę są błędy i koszty.</p></li>
+      <li><h3>Sukces to wynik, a nie kod statusu.</h3><p>Zielony dashboard niewiele dowodzi. Sukces definiuję przez wynik, którego potrzebuje użytkownik: dane dotarły, polisa została wystawiona, rachunek spadł.</p></li>
+      <li><h3>Najpierw najtańsza metoda.</h3><p>Drogie narzędzia to ostatni krok, a nie domyślny wybór. Większość pracy ich nie potrzebuje, a oszczędności rosną z każdym miesiącem.</p></li>
+      <li><h3>Backup jest gotowy, gdy działa odtworzenie.</h3><p>Testuję odtwarzanie, piszę runbooki i robię ćwiczenia z incydentów, zanim cokolwiek się zepsuje.</p></li>
+      <li><h3>Usuwaj, zanim dodasz.</h3><p>Nieużywane zasoby i martwy kod co miesiąc kosztują pieniądze i uwagę. Ich usunięcie to często najtańsze możliwe usprawnienie.</p></li>
+      <li><h3>Agenci piszą kod. Ja odpowiadam za projekt i review.</h3><p>Ustawiam zespoły do pracy agent-first: instrukcje w repozytorium, wspólne skille i model dobrany do każdego zadania. Każda decyzja projektowa i każde review nadal należą do człowieka.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="now" aria-labelledby="now-h">
+  <div class="wrap split">
+    <div class="card">
+      <h3 id="now-h">Teraz</h3>
+      <p class="when">Aktualizacja: październik 2026 · Łódź</p>
+      <ul class="now">
+        <li><span><b>Buduję Cartpie</b>, API i serwer MCP do danych produktowych.</span></li>
+        <li><span><b>Współtworzę Fablę</b>, planowanie treści z AI dla małych marek, w zamkniętej becie.</span></li>
+        <li><span><b>Fractional CTO</b> w małych firmach z e-commerce, nieruchomości i logistyki, m.in. w mieszkanko.</span></li>
+        <li><span><b>Tnę rachunki za chmurę</b> w ramach reducecost.cloud, z wynagrodzeniem z oszczędności.</span></li>
+        <li><span><b>Szukam</b> kolejnej roli lidera na pełen etat: CTO, Head of Engineering lub Principal, zdalnie z Polski.</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Teksty</h3>
+      <p class="when">Krótkie posty techniczne na LinkedIn, po angielsku</p>
+      <ul class="posts">
+        <li><a href="https://www.linkedin.com/in/andriivotiakov/recent-activity/all/" rel="noopener"><b>Jeden parser na stronę czy cztery równolegle</b><span>Jak scrapuję e-commerce bez osobnego parsera dla każdego sklepu.</span></a></li>
+        <li><a href="https://www.linkedin.com/in/andriivotiakov/recent-activity/all/" rel="noopener"><b>Każda recenzja z Google Play przez batchexecute</b><span>Jak Google Play udostępnia pełną historię recenzji aplikacji.</span></a></li>
+        <li><a href="https://www.linkedin.com/in/andriivotiakov/recent-activity/all/" rel="noopener"><b>Czego programowanie sportowe nauczyło mnie o kodzie produkcyjnym</b><span>O olimpiadach i kodzie produkcyjnym.</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="contact">
+      <h2 id="contact-h">Dwa sposoby <span class="serif">współpracy.</span></h2>
+      <div class="ways">
+        <div class="way"><span class="k">Pełny etat</span><h3>CTO, Head of Engineering, Principal lub founding engineer</h3><p>Zdalnie z Łodzi. Kontrakt B2B lub umowa o pracę. Prowadzę zespół i nadal piszę kod.</p></div>
+        <div class="way"><span class="k">Fractional i projekty</span><h3>Fractional CTO, platforma, scraping lub koszty chmury</h3><p>Przez moją firmę, rēte consulting. Pracę nad kosztami można opłacić ze zweryfikowanych oszczędności.</p></div>
+      </div>
+      <div class="mail">
+        <button class="reveal" type="button" data-e="bW9jLmxpYW1nQHZva2FpdG92LmlpcmRuYQ==">Pokaż mój e-mail <span class="arr" aria-hidden="true">→</span></button>
+        <span class="mail-note">Ukryty przed botami. Pokaże się po kliknięciu.</span>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/andriivotiakov/" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/votiakov" rel="noopener">GitHub ↗</a>
+        <a href="https://apify.com/native_emblem" rel="noopener">Apify ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="background" aria-labelledby="bg-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="bg-h">Doświadczenie</h2>
+      <p>Wersja skrócona. Reszta jest na LinkedIn.</p>
+    </div>
+    <ul class="timeline">
+      <li><span class="y">2024–teraz</span><span class="r">rēte consulting <span>· fractional CTO</span></span><span class="d">Moja firma doradcza w Polsce i moje własne produkty.</span></li>
+      <li><span class="y">2024–2026</span><span class="r">Basket (wntd.ai) <span>· lead engineer</span></span><span class="d">Platforma danych dla ponad 30 000 sklepów i funkcje AI. Zespół 5 osób.</span></li>
+      <li><span class="y">2021–2024</span><span class="r">Locket <span>· CTO</span></span><span class="d">Platforma ubezpieczeniowa multi-tenant dla innych ubezpieczycieli. Zespół około 15 osób.</span></li>
+      <li><span class="y">2020–2021</span><span class="r">Locket <span>· founding engineer</span></span><span class="d">Produkt ubezpieczeniowy B2C od pierwszego commita.</span></li>
+      <li><span class="y">2018–2020, 2023–2024</span><span class="r">Hero Labs <span>· founding engineer, interim CTO</span></span><span class="d">Platforma IoT, aplikacja mobilna i platforma danych.</span></li>
+      <li><span class="y">2012–2018</span><span class="r">Neos, EngineArch, freelance</span><span class="d">Ubezpieczeniowa platforma IoT, projekty dla UEFA i PKO BP, strony i sklepy internetowe.</span></li>
+      <li><span class="y">Od 12. roku życia</span><span class="r">Programowanie sportowe</span><span class="d">Olimpiady krajowe i międzynarodowe w Pascalu i C/C++.</span></li>
+    </ul>
+    <div class="cvline">
+      <span>B.A.Sc. Computer Science, Politechnika Łódzka. Angielski i polski w pracy, ukraiński i rosyjski jako języki ojczyste.</span>
+      <a class="btn" href="https://www.linkedin.com/in/andriivotiakov/" rel="noopener">Profil na LinkedIn <span class="arr" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Andrii Votiakov</span>
+    <span>Czysty HTML i CSS. Bez trackerów i ciasteczek.</span>
+    <span><a href="#top">Do góry ↑</a></span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.querySelector('.nav');
+    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    var r = document.querySelector('[data-e]');
+    if (r) r.addEventListener('click', function () {
+      var e = atob(r.getAttribute('data-e')).split('').reverse().join('');
+      var a = document.createElement('a'); a.className = 'addr'; a.href = 'mail' + 'to:' + e; a.textContent = e;
+      var c = document.createElement('button'); c.type = 'button'; c.className = 'copy'; c.textContent = 'Kopiuj e-mail';
+      c.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(e).then(function () { c.textContent = 'Skopiowano'; setTimeout(function () { c.textContent = 'Kopiuj e-mail'; }, 1600); });
+      });
+      var note = r.parentNode.querySelector('.mail-note'); if (note) note.remove();
+      r.replaceWith(a); a.after(c); a.focus();
+    });
+  })();
+</script>
+</body>
+</html>
