@@ -1,3 +1,13 @@
+## Status (live since 2026-10-13)
+
+- GitHub Pages: repo `votiakov/votiakov.com` (public), deployed by `.github/workflows/pages.yml` on every push to `main`. Custom domain `votiakov.com`, certificate approved, HTTPS enforced.
+- GoDaddy DNS (email records untouched):
+  - `A @` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+  - `AAAA @` → 2606:50c0:8000::153, 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153
+  - `CNAME www` → votiakov.github.io
+  - `TXT @` → google-site-verification (Search Console domain property). Keep it, or the property loses verification.
+- Google Search Console: domain property `votiakov.com` verified by DNS TXT; sitemap `https://votiakov.com/sitemap.xml` submitted; indexing requested for the home page.
+
 # Deploying votiakov.com
 
 The site is the static folder `site/`. There is no build step.
