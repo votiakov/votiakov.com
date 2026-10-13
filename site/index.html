@@ -31,7 +31,6 @@
   "url": "https://votiakov.com/",
   "image": "https://votiakov.com/assets/portrait.webp",
   "jobTitle": "Lead engineer and former CTO",
-  "email": "mailto:[email hidden]",
   "address": { "@type": "PostalAddress", "addressLocality": "Łódź", "addressCountry": "PL" },
   "knowsAbout": ["Web data collection", "Cloud infrastructure", "AWS", "GCP", "Kubernetes", "Cloud cost optimisation", "LLM systems"],
   "sameAs": ["https://www.linkedin.com/in/andriivotiakov/", "https://github.com/votiakov", "https://apify.com/native_emblem"]
@@ -50,7 +49,6 @@
         <li class="opt"><a href="#work">Work</a></li>
         <li class="opt"><a href="#approach">Approach</a></li>
         <li class="opt"><a href="#now">Now</a></li>
-        <li><a href="/Andrii_Votiakov_CV.pdf">CV</a></li>
         <li><a class="cta" href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -301,14 +299,13 @@
         <div class="way"><span class="k">Fractional and projects</span><h3>Fractional CTO, platform, scraping or cloud cost work</h3><p>Through my company, rēte consulting. Cost work can be paid from verified savings.</p></div>
       </div>
       <div class="mail">
-        <a class="addr" href="mailto:[email hidden]">[email hidden]</a>
-        <button class="copy" type="button" data-copy="[email hidden]">Copy email</button>
+        <button class="reveal" type="button" data-e="bW9jLmxpYW1nQHZva2FpdG92LmlpcmRuYQ==">Show my email <span class="arr" aria-hidden="true">→</span></button>
+        <span class="mail-note">Hidden from bots. One click shows it.</span>
       </div>
       <div class="links">
         <a href="https://www.linkedin.com/in/andriivotiakov/" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/votiakov" rel="noopener">GitHub ↗</a>
         <a href="https://apify.com/native_emblem" rel="noopener">Apify ↗</a>
-        <a href="/Andrii_Votiakov_CV.pdf">CV, PDF ↓</a>
       </div>
     </div>
   </div>
@@ -318,7 +315,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="bg-h">Background</h2>
-      <p>The short version. The CV has the rest.</p>
+      <p>The short version. The rest is on LinkedIn.</p>
     </div>
     <ul class="timeline">
       <li><span class="y">2024–now</span><span class="r">rēte consulting <span>· fractional CTO</span></span><span class="d">My consulting business in Poland, and my own products.</span></li>
@@ -331,7 +328,7 @@
     </ul>
     <div class="cvline">
       <span>B.A.Sc. Computer Science, Lodz University of Technology. English and Polish at work, Ukrainian and Russian native.</span>
-      <a class="btn" href="/Andrii_Votiakov_CV.pdf">Download CV <span class="arr" aria-hidden="true">↓</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/andriivotiakov/" rel="noopener">LinkedIn profile <span class="arr" aria-hidden="true">↗</span></a>
     </div>
   </div>
 </section>
@@ -351,13 +348,17 @@
     var nav = document.querySelector('.nav');
     var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-    document.querySelectorAll('[data-copy]').forEach(function (b) {
-      b.addEventListener('click', function () {
+    var r = document.querySelector('[data-e]');
+    if (r) r.addEventListener('click', function () {
+      var e = atob(r.getAttribute('data-e')).split('').reverse().join('');
+      var a = document.createElement('a'); a.className = 'addr'; a.href = 'mail' + 'to:' + e; a.textContent = e;
+      var c = document.createElement('button'); c.type = 'button'; c.className = 'copy'; c.textContent = 'Copy email';
+      c.addEventListener('click', function () {
         if (!navigator.clipboard) return;
-        navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function () {
-          var t = b.textContent; b.textContent = 'Copied'; setTimeout(function () { b.textContent = t; }, 1600);
-        });
+        navigator.clipboard.writeText(e).then(function () { c.textContent = 'Copied'; setTimeout(function () { c.textContent = 'Copy email'; }, 1600); });
       });
+      var note = r.parentNode.querySelector('.mail-note'); if (note) note.remove();
+      r.replaceWith(a); a.after(c); a.focus();
     });
   })();
 </script>

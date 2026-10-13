@@ -408,3 +408,10 @@ footer.foot a { color: var(--ink-3); }
 .w85 { --w: 85%; }
 .w95 { --w: 95%; }
 .w100 { --w: 100%; }
+
+/* Email reveal */
+.reveal { font: 400 clamp(24px, 3.6vw, 40px)/1.1 var(--serif); font-style: italic; color: var(--panel-ink); background: none; border: 0; border-bottom: 1px dashed var(--panel-line); padding: 0 0 4px; cursor: pointer; display: inline-flex; align-items: baseline; gap: 12px; }
+.reveal .arr { font: 400 .6em/1 var(--sans); font-style: normal; transition: transform .15s; }
+.reveal:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.reveal:hover .arr { transform: translateX(4px); }
+.mail-note { font: 400 12.5px/1.4 var(--mono); color: var(--panel-ink-2); }
