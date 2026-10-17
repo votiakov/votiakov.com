@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHEIN product data: full catalogues, daily feeds and price history · Andrii Votiakov</title>
+<meta name="description" content="Full SHEIN product catalogues by country with real local prices: 5.15 million UK products, 6.6 million across 9 European storefronts. Datasets, daily feeds, price history and an API. Free report.">
+<link rel="canonical" href="https://votiakov.com/shein-data/">
+<meta name="theme-color" content="#f4f2ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrumentserif-400-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Andrii Votiakov">
+<meta property="og:title" content="SHEIN product data: every product, every country, every day">
+<meta property="og:description" content="Full SHEIN catalogues by country with local prices: 5.15 million UK products. Datasets, daily feeds, price history and a free report.">
+<meta property="og:url" content="https://votiakov.com/shein-data/">
+<meta property="og:image" content="https://votiakov.com/shein-data/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://votiakov.com/#person",
+      "name": "Andrii Votiakov",
+      "url": "https://votiakov.com/",
+      "sameAs": ["https://www.linkedin.com/in/andriivotiakov/", "https://github.com/votiakov", "https://apify.com/native_emblem"]
+    },
+    {
+      "@type": "Dataset",
+      "name": "SHEIN product catalogue data by country",
+      "description": "Every product SHEIN sells in a country, with the local selling price, crossed-out price, discount, currency, stock indicator, sold-out flag, rating, review count, colours, image URLs, category path, seller store code and creation date. The UK catalogue snapshot of 16 to 17 October 2026 holds 5,154,854 products. Product lists for 8 more European storefronts hold 6.6 million distinct products. Available as one-off snapshots, daily feeds with changes, and price history.",
+      "url": "https://votiakov.com/shein-data/",
+      "creator": { "@id": "https://votiakov.com/#person" },
+      "keywords": ["SHEIN data", "SHEIN dataset", "SHEIN product data", "SHEIN prices", "SHEIN price history", "fast fashion data", "e-commerce product data"],
+      "isAccessibleForFree": false,
+      "temporalCoverage": "2026-10-16/..",
+      "spatialCoverage": ["United Kingdom", "Germany", "France", "Spain", "Italy", "Netherlands", "Poland", "United States"],
+      "variableMeasured": ["product ID", "SKU", "title", "category", "selling price", "crossed-out price", "discount", "currency", "stock", "rating", "review count", "colours", "image URLs", "seller store", "creation date"]
+    },
+    {
+      "@type": "Report",
+      "name": "SHEIN by the numbers: UK catalogue snapshot, October 2026",
+      "url": "https://votiakov.com/reports/shein-by-the-numbers-uk-2026-10.pdf",
+      "encodingFormat": "application/pdf",
+      "datePublished": "2026-10-18",
+      "author": { "@id": "https://votiakov.com/#person" },
+      "isAccessibleForFree": true
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Which SHEIN countries do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "The UK catalogue is complete: 5.15 million products. For Germany, France, Spain, Italy, the Netherlands, Poland and two EU-wide storefronts I hold the full product lists, 6.6 million distinct products, and collect the details on request. For the US and other regions, ask." } },
+        { "@type": "Question", "name": "How complete is the data?", "acceptedAnswer": { "@type": "Answer", "text": "Coverage is measured for every country. For the UK on 17 October 2026 I collected 98.5% of all products SHEIN listed; the other 1.5% were sold out or off sale at that moment." } },
+        { "@type": "Question", "name": "Can I get a free sample?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Write to me and I will send 10,000 products from the country you need, in CSV or Parquet." } },
+        { "@type": "Question", "name": "Is this affiliated with SHEIN?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is independent data collection and analysis. SHEIN is a trademark of its owner." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Andrii Votiakov, home"><span class="avatar"><img src="/assets/portrait.webp" width="34" height="34" alt=""><i class="on" title="Open to new work"></i></span><span class="name">Andrii Votiakov</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li class="opt"><a href="#offer">Data</a></li>
+        <li class="opt"><a href="#report">Report</a></li>
+        <li class="opt"><a href="#faq">FAQ</a></li>
+        <li><a class="cta" href="#contact">Get a sample</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="/">votiakov.com</a> / SHEIN data</p>
+    <h1>Every SHEIN product, <span class="serif">every country, every day.</span></h1>
+    <p class="lede">I collect SHEIN's full product catalogue per country, with the real local price, discount, stock and reviews of every product. For the UK that is 5.15 million products. I sell it as datasets, daily feeds, price history and an API.</p>
+    <div class="btns">
+      <a class="btn primary" href="/reports/shein-by-the-numbers-uk-2026-10.pdf">Download the free report <span class="arr" aria-hidden="true">↓</span></a>
+      <a class="btn" href="#contact">Ask for a sample <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <ul class="facts">
+      <li>UK · 5.15M products</li>
+      <li>9 European storefronts · 6.6M products</li>
+      <li>Local prices and currencies</li>
+      <li>Refreshed daily</li>
+      <li>CSV · Parquet · JSON · API</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="numbers-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="numbers-h">SHEIN UK <span class="serif">in numbers</span></h2>
+      <p>From my snapshot of SHEIN's UK catalogue, 16 to 17 October 2026. The full analysis is in the free report below.</p>
+    </div>
+    <div class="numbers">
+      <div><b>5,154,854</b><span>products in SHEIN's UK catalogue</span><em>UK · Oct 2026</em></div>
+      <div><b>98.5%</b><span>of all listed UK products collected; the other 1.5% were sold out at that moment</span><em>coverage</em></div>
+      <div><b>~14,500</b><span>new products added every day, on a six-day week</span><em>last 90 days</em></div>
+      <div><b data-stat="discounted">98%</b><span>of products shown "on sale" next to a higher crossed-out price</span><em>UK</em></div>
+      <div><b>3%</b><span>of 2.15 million identical products cost the same in the UK and the US</span><em>UK vs US</em></div>
+      <div><b>78,770</b><span>seller storefronts behind the UK catalogue</span><em>UK</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="offer" aria-labelledby="offer-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="offer-h">What you <span class="serif">can get</span></h2>
+      <p>One-off snapshots, daily feeds or live lookups. You choose the countries, the fields and the format.</p>
+    </div>
+    <div class="offer">
+      <div class="card">
+        <h3>Full country catalogue</h3>
+        <p class="when">One-off snapshot</p>
+        <p>Every product SHEIN sells in a country on one date. For the UK that is 5.15 million rows. Any SHEIN storefront.</p>
+      </div>
+      <div class="card">
+        <h3>Daily feed</h3>
+        <p class="when">Subscription</p>
+        <p>The full catalogue every day, plus what changed: new products, removed products, and changes in price, discount and stock.</p>
+      </div>
+      <div class="card">
+        <h3>Price history</h3>
+        <p class="when">Archive</p>
+        <p>Day-by-day prices, kept exactly as collected. Check discount claims against the real 30-day price, track markdowns, or measure what new import duties do to prices.</p>
+      </div>
+      <div class="card">
+        <h3>API and live lookups</h3>
+        <p class="when">Pay per product</p>
+        <p>Single products, categories or bulk through the <a href="https://cartpie.com" rel="noopener">Cartpie</a> API and MCP server, or my <a href="https://apify.com/native_emblem/shein-product-scraper" rel="noopener">SHEIN scraper on the Apify Store</a>.</p>
+      </div>
+    </div>
+    <div class="fieldlist">
+      <p><b>Fields</b></p>
+      <ul class="facts">
+        <li>product ID</li><li>SKU</li><li>title</li><li>category path</li><li>selling price</li><li>crossed-out price</li><li>discount</li><li>currency</li><li>stock</li><li>sold-out flag</li><li>rating</li><li>review count</li><li>colours</li><li>image URLs</li><li>seller store</li><li>creation date</li>
+      </ul>
+      <p class="muted">Delivered as CSV, Parquet or JSON: a download, or straight into S3, Google Cloud Storage or Snowflake.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="who-h">Who it's <span class="serif">for</span></h2>
+      <p>Anyone who needs to know what SHEIN sells, at what price, and how that changes.</p>
+    </div>
+    <div class="offer">
+      <div class="card"><h3>Brands and retailers</h3><p>Price ladders by category, new arrivals and markdown depth, for range and pricing decisions.</p></div>
+      <div class="card"><h3>Market intelligence companies</h3><p>A complete SHEIN layer for your product, without building and maintaining a crawler for a hard site. Resale licences available.</p></div>
+      <div class="card"><h3>Investors and analysts</h3><p>SHEIN listed in Hong Kong in September 2026. Daily prices, assortment and discount depth by country, as a dataset or as daily metrics.</p></div>
+      <div class="card"><h3>Researchers and journalists</h3><p>Test discount claims, measure how fast the catalogue grows, and compare prices across countries.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="method" aria-labelledby="method-h">
+  <div class="wrap split">
+    <div class="card">
+      <h3 id="method-h">Quality and coverage</h3>
+      <p class="when">Measured, not assumed</p>
+      <ul class="now">
+        <li><span>Every price is the one shoppers in that country see, in the <b>local currency</b>.</span></li>
+        <li><span>No accounts, no logins and <b>no personal data</b>.</span></li>
+        <li><span>Coverage is measured for every catalogue. For the UK on 17 October 2026 I collected <b>98.5%</b> of all listed products; the other 1.5% were sold out or off sale at that moment.</span></li>
+        <li><span>My SHEIN scraper on the Apify Store ran about <b>2,800 times</b> in the last 30 days.</span></li>
+      </ul>
+    </div>
+    <div class="card" id="report">
+      <h3>SHEIN by the numbers</h3>
+      <p class="when">Free report · UK · October 2026 · 11 pages, PDF</p>
+      <ul class="posts">
+        <li><b>5.15 million products</b><span>and about 14,500 new ones every day.</span></li>
+        <li><b>Almost everything is "on sale"</b><span>What the crossed-out prices say about discounts.</span></li>
+        <li><b>Same product, different price</b><span>Only 3% of identical products cost the same in the UK and the US.</span></li>
+        <li><b>A six-day week</b><span>New products follow a working week and Chinese public holidays.</span></li>
+      </ul>
+      <div class="btns"><a class="btn primary" href="/reports/shein-by-the-numbers-uk-2026-10.pdf">Download the report <span class="arr" aria-hidden="true">↓</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="faq-h">Questions</h2>
+      <p>If yours is not here, write to me.</p>
+    </div>
+    <div class="faq">
+      <details><summary>Which SHEIN countries do you cover?</summary><p>The UK catalogue is complete: 5.15 million products. For Germany, France, Spain, Italy, the Netherlands, Poland and two EU-wide storefronts I hold the full product lists, 6.6 million distinct products, and collect the details on request. For the US and other regions, ask.</p></details>
+      <details><summary>How complete is the data?</summary><p>Coverage is measured for every country. For the UK on 17 October 2026 I collected 98.5% of all products SHEIN listed; the other 1.5% were sold out or off sale at that moment.</p></details>
+      <details><summary>How fresh is it?</summary><p>Snapshots are dated. Feeds are collected every day, and the price history keeps each day exactly as it was collected.</p></details>
+      <details><summary>Can I get a free sample?</summary><p>Yes. Write to me and I will send 10,000 products from the country you need, in CSV or Parquet.</p></details>
+      <details><summary>What does it cost?</summary><p>It depends on the countries, how often you need it and the licence. Snapshots are a one-off price and feeds are monthly. Write to me for a quote.</p></details>
+      <details><summary>Is this affiliated with SHEIN?</summary><p>No. This is independent data collection and analysis. SHEIN is a trademark of its owner.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="contact">
+      <h2 id="contact-h">Need SHEIN data? <span class="serif">Tell me what for.</span></h2>
+      <div class="ways">
+        <div class="way"><span class="k">Datasets and feeds</span><h3>Full catalogues, daily feeds, price history</h3><p>Any SHEIN storefront, in your format. A free 10,000-product sample first.</p></div>
+        <div class="way"><span class="k">Live lookups</span><h3>API, MCP server and Apify scraper</h3><p>Single products or categories on demand, paid per product.</p></div>
+      </div>
+      <div class="mail">
+        <button class="reveal" type="button" data-e="bW9jLmxpYW1nQHZva2FpdG92LmlpcmRuYQ==">Show my email <span class="arr" aria-hidden="true">→</span></button>
+        <span class="mail-note">Hidden from bots. One click shows it.</span>
+      </div>
+      <div class="links">
+        <a href="https://apify.com/native_emblem/shein-product-scraper" rel="noopener">SHEIN scraper on Apify ↗</a>
+        <a href="https://cartpie.com" rel="noopener">Cartpie API ↗</a>
+        <a href="https://www.linkedin.com/in/andriivotiakov/" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Andrii Votiakov</span>
+    <span>Independent. Not affiliated with SHEIN.</span>
+    <span><a href="/">Home</a> · <a href="#top">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var nav = document.querySelector('.nav');
+    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    var r = document.querySelector('[data-e]');
+    if (r) r.addEventListener('click', function () {
+      var e = atob(r.getAttribute('data-e')).split('').reverse().join('');
+      var a = document.createElement('a'); a.className = 'addr'; a.href = 'mail' + 'to:' + e; a.textContent = e;
+      var c = document.createElement('button'); c.type = 'button'; c.className = 'copy'; c.textContent = 'Copy email';
+      c.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(e).then(function () { c.textContent = 'Copied'; setTimeout(function () { c.textContent = 'Copy email'; }, 1600); });
+      });
+      var note = r.parentNode.querySelector('.mail-note'); if (note) note.remove();
+      r.replaceWith(a); a.after(c); a.focus();
+    });
+  })();
+</script>
+</body>
+</html>

@@ -415,3 +415,33 @@ footer.foot a { color: var(--ink-3); }
 .reveal:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .reveal:hover .arr { transform: translateX(4px); }
 .mail-note { font: 400 12.5px/1.4 var(--mono); color: var(--panel-ink-2); }
+
+/* SHEIN data page and the home-page strip that links to it */
+.page-hero .facts { margin-top: 4px; }
+.offer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.offer .card p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+.offer .card .when { margin: 0 0 12px; color: var(--ink-3); font-size: 12px; }
+.offer .card h3 { margin-bottom: 8px; }
+.offer .card .when + p { margin-top: 0; }
+.fieldlist { margin-top: 28px; display: grid; gap: 12px; }
+.fieldlist p { margin: 0; }
+.muted { color: var(--ink-3); font-size: 14.5px; }
+.split .card .btns { margin-top: 20px; }
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); padding: 4px 0; }
+.faq summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 13px; font: 400 22px/1 var(--mono); color: var(--accent-ink); }
+.faq details[open] summary::after { content: "−"; }
+.faq summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.faq details p { margin: 0 0 18px; color: var(--ink-2); max-width: 46em; }
+.feature { margin-top: 20px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px 28px; align-items: center; padding: 22px 26px; border: 1px solid var(--accent); border-radius: 18px; background: color-mix(in srgb, var(--accent) 6%, var(--card)); text-decoration: none; color: inherit; transition: transform .15s, background .15s; }
+.feature:hover { transform: translateY(-1px); color: inherit; background: color-mix(in srgb, var(--accent) 10%, var(--card)); }
+.feature .k { font: 500 11.5px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--accent-ink); display: block; margin-bottom: 8px; }
+.feature h3 { margin: 0 0 6px; font-size: 22px; letter-spacing: -0.02em; font-weight: 600; }
+.feature p { margin: 0; color: var(--ink-2); font-size: 15.5px; max-width: 46em; }
+.feature .go { font: 500 13px/1 var(--mono); color: var(--accent-ink); white-space: nowrap; }
+@media (max-width: 760px) {
+  .offer { grid-template-columns: 1fr; }
+  .feature { grid-template-columns: 1fr; }
+}
