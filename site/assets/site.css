@@ -445,3 +445,4 @@ footer.foot a { color: var(--ink-3); }
   .offer { grid-template-columns: 1fr; }
   .feature { grid-template-columns: 1fr; }
 }
+.page-hero .muted { margin: 14px 0 0; }

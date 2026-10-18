@@ -47,6 +47,18 @@
       "variableMeasured": ["product ID", "SKU", "title", "category", "selling price", "crossed-out price", "discount", "currency", "stock", "rating", "review count", "colours", "image URLs", "seller store", "creation date"]
     },
     {
+      "@type": "Dataset",
+      "name": "SHEIN UK product data: free sample of 10,000 products",
+      "description": "10,000 random products from SHEIN's United Kingdom catalogue snapshot of 17 October 2026 (5,154,854 products), with prices in GBP, crossed-out prices, discount, category path, stock, reviews, rating, colours, image URLs, seller store and creation date. CSV and Parquet. Free for evaluation, research and journalism with attribution.",
+      "url": "https://votiakov.com/shein-data/",
+      "creator": { "@id": "https://votiakov.com/#person" },
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-10-17",
+      "spatialCoverage": "United Kingdom",
+      "keywords": ["SHEIN dataset", "SHEIN data sample", "SHEIN UK products", "fast fashion dataset", "e-commerce dataset"],
+      "distribution": [{ "@type": "DataDownload", "encodingFormat": "application/zip", "contentUrl": "https://votiakov.com/samples/shein-uk-sample-10k-2026-10.zip" }]
+    },
+    {
       "@type": "Report",
       "name": "SHEIN by the numbers: UK catalogue snapshot, October 2026",
       "url": "https://votiakov.com/reports/shein-by-the-numbers-uk-2026-10.pdf",
@@ -60,7 +72,7 @@
       "mainEntity": [
         { "@type": "Question", "name": "Which SHEIN countries do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "The UK catalogue is complete: 5.15 million products. For Germany, France, Spain, Italy, the Netherlands, Poland and two EU-wide storefronts I hold the full product lists, 6.6 million distinct products, and collect the details on request. For the US and other regions, ask." } },
         { "@type": "Question", "name": "How complete is the data?", "acceptedAnswer": { "@type": "Answer", "text": "Coverage is measured for every country. For the UK on 17 October 2026 I collected 98.5% of all products SHEIN listed; the other 1.5% were sold out or off sale at that moment." } },
-        { "@type": "Question", "name": "Can I get a free sample?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Write to me and I will send 10,000 products from the country you need, in CSV or Parquet." } },
+        { "@type": "Question", "name": "Can I get a free sample?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Download 10,000 random UK products with every field, in CSV and Parquet, from votiakov.com/samples/shein-uk-sample-10k-2026-10.zip. For a sample from another country, write to me." } },
         { "@type": "Question", "name": "Is this affiliated with SHEIN?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is independent data collection and analysis. SHEIN is a trademark of its owner." } }
       ]
     }
@@ -79,7 +91,7 @@
         <li class="opt"><a href="#offer">Data</a></li>
         <li class="opt"><a href="#report">Report</a></li>
         <li class="opt"><a href="#faq">FAQ</a></li>
-        <li><a class="cta" href="#contact">Get a sample</a></li>
+        <li><a class="cta" href="/samples/shein-uk-sample-10k-2026-10.zip">Free sample</a></li>
       </ul>
     </nav>
   </div>
@@ -93,8 +105,8 @@
     <h1>Every SHEIN product, <span class="serif">every country, every day.</span></h1>
     <p class="lede">I collect SHEIN's full product catalogue per country, with the real local price, discount, stock and reviews of every product. For the UK that is 5.15 million products. I sell it as datasets, daily feeds, price history and an API.</p>
     <div class="btns">
-      <a class="btn primary" href="/reports/shein-by-the-numbers-uk-2026-10.pdf">Download the free report <span class="arr" aria-hidden="true">↓</span></a>
-      <a class="btn" href="#contact">Ask for a sample <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn primary" href="/samples/shein-uk-sample-10k-2026-10.zip">Download a free sample <span class="arr" aria-hidden="true">↓</span></a>
+      <a class="btn" href="/reports/shein-by-the-numbers-uk-2026-10.pdf">Free report (PDF) <span class="arr" aria-hidden="true">↓</span></a>
     </div>
     <ul class="facts">
       <li>UK · 5.15M products</li>
@@ -103,6 +115,7 @@
       <li>Refreshed daily</li>
       <li>CSV · Parquet · JSON · API</li>
     </ul>
+    <p class="muted">Free sample: 10,000 random UK products with every field, CSV and Parquet, 7 MB zip.</p>
   </div>
 </section>
 
@@ -212,7 +225,7 @@
       <details><summary>Which SHEIN countries do you cover?</summary><p>The UK catalogue is complete: 5.15 million products. For Germany, France, Spain, Italy, the Netherlands, Poland and two EU-wide storefronts I hold the full product lists, 6.6 million distinct products, and collect the details on request. For the US and other regions, ask.</p></details>
       <details><summary>How complete is the data?</summary><p>Coverage is measured for every country. For the UK on 17 October 2026 I collected 98.5% of all products SHEIN listed; the other 1.5% were sold out or off sale at that moment.</p></details>
       <details><summary>How fresh is it?</summary><p>Snapshots are dated. Feeds are collected every day, and the price history keeps each day exactly as it was collected.</p></details>
-      <details><summary>Can I get a free sample?</summary><p>Yes. Write to me and I will send 10,000 products from the country you need, in CSV or Parquet.</p></details>
+      <details><summary>Can I get a free sample?</summary><p>Yes. <a href="/samples/shein-uk-sample-10k-2026-10.zip">Download 10,000 random UK products</a> with every field, in CSV and Parquet (7 MB zip). For a sample from another country, write to me.</p></details>
       <details><summary>What does it cost?</summary><p>It depends on the countries, how often you need it and the licence. Snapshots are a one-off price and feeds are monthly. Write to me for a quote.</p></details>
       <details><summary>Is this affiliated with SHEIN?</summary><p>No. This is independent data collection and analysis. SHEIN is a trademark of its owner.</p></details>
     </div>
