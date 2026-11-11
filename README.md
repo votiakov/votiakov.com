@@ -3,7 +3,7 @@
 Personal site of Andrii Votiakov. Static HTML and one CSS file, no build step, no trackers.
 
 - `site/index.html`: the home page. Hero with an animated Cartpie demo, six numbers, products (Cartpie, Fabla, mieszkanko, reducecost.cloud, a SHEIN data strip, Apify), three company stories with outcome visuals, how I work, now, writing, contact, background.
-- `site/shein-data/index.html`: the SHEIN data page (datasets, daily feeds, price history, API), with Dataset, Report and FAQ structured data and its own social card `og.png`. Its numbers come from the report; update both together.
+- `site/shein-data/index.html`: the SHEIN data page (datasets priced per delivery, API), with Dataset, Report and FAQ structured data and its own social card `og.png`. Its numbers come from the report; update both together.
 - `site/reports/`: downloadable reports, such as `shein-by-the-numbers-uk-2026-10.pdf`.
 - `site/assets/site.css`: the design system (light and dark, self-hosted Inter, Instrument Serif and JetBrains Mono).
 - `site/assets/products/`: product screenshots (1200×750 WebP). Re-take them when a product site changes.

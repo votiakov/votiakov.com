@@ -16,7 +16,7 @@ trap 'kill $SERVER; rm -rf "$TMP" "$ROOT/site/_og.html"' EXIT
 sleep 1
 shot() {
   cp "$ROOT/tools/$1" "$ROOT/site/_og.html"
-  "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-first-run --user-data-dir="$TMP/profile" \
+  "$CHROME" --headless=new --disable-gpu --hide-scrollbars --no-first-run --force-dark-mode --user-data-dir="$TMP/profile" \
     --force-device-scale-factor=1 --virtual-time-budget=3000 --window-size=1200,630 \
     --screenshot="$ROOT/site/$2" "http://127.0.0.1:$PORT/_og.html" >/dev/null 2>&1
   echo "$2 rebuilt"
