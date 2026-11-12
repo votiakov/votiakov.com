@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SHEIN product data: full country catalogues with local prices · Andrii Votiakov</title>
-<meta name="description" content="Full SHEIN product catalogues by country with real local prices: 3.1 million products in Germany, 2.7 million in France, 5.15 million in the UK. $0.95 per 1,000 products per delivery. Free samples and report.">
+<meta name="description" content="Full SHEIN product catalogues by country with real local prices: 21 million products in the US, 3.1 million in Germany, 2.7 million in France, 5.15 million in the UK. $0.95 per 1,000 products per delivery. Free samples and report.">
 <link rel="canonical" href="https://votiakov.com/shein-data/">
 <meta name="theme-color" content="#f4f2ec" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0d0d0c" media="(prefers-color-scheme: dark)">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Andrii Votiakov">
 <meta property="og:title" content="SHEIN product data: every product, country by country">
-<meta property="og:description" content="Full SHEIN catalogues by country with local prices: Germany, France, the UK and more. Free 10,000-product samples and a free report.">
+<meta property="og:description" content="Full SHEIN catalogues by country with local prices: the US, Germany, France, the UK and more. Free 10,000-product samples and a free report.">
 <meta property="og:url" content="https://votiakov.com/shein-data/">
 <meta property="og:image" content="https://votiakov.com/shein-data/og.png">
 <meta property="og:image:width" content="1200">
@@ -37,7 +37,7 @@
     {
       "@type": "Dataset",
       "name": "SHEIN product catalogue data by country",
-      "description": "Every product SHEIN sells in a country, with the local selling price, crossed-out price, discount, currency, stock indicator, sold-out flag, rating, review count, colours, image URLs, category path, seller store code and creation date. The Germany and France snapshots of 10 November 2026 hold 3,123,472 and 2,724,075 products, and the UK snapshot of 16 to 17 October 2026 held 5,154,854. Each delivery is a full new collection; a repeat delivery comes with a file of what changed.",
+      "description": "Every product SHEIN sells in a country, with the local selling price, crossed-out price, discount, currency, stock indicator, sold-out flag, rating, review count, colours, image URLs, category path, seller store code and creation date. The US snapshot of 11 November 2026 holds 21,389,348 products, the Germany and France snapshots of 10 November 2026 hold 3,123,472 and 2,724,075, and the UK snapshot of 16 to 17 October 2026 held 5,154,854. Each delivery is a full new collection.",
       "url": "https://votiakov.com/shein-data/",
       "creator": { "@id": "https://votiakov.com/#person" },
       "keywords": ["SHEIN data", "SHEIN dataset", "SHEIN product data", "SHEIN prices", "fast fashion data", "e-commerce product data"],
@@ -45,6 +45,18 @@
       "temporalCoverage": "2026-10-16/..",
       "spatialCoverage": ["United Kingdom", "Germany", "France", "Spain", "Italy", "Netherlands", "Poland", "United States"],
       "variableMeasured": ["product ID", "SKU", "title", "category", "selling price", "crossed-out price", "discount", "currency", "stock", "rating", "review count", "colours", "image URLs", "seller store", "creation date"]
+    },
+    {
+      "@type": "Dataset",
+      "name": "SHEIN US product data: free sample of 10,000 products",
+      "description": "10,000 random products from SHEIN's United States catalogue snapshot of 11 November 2026 (21,389,348 products), with prices in USD, crossed-out prices, discount, category path, reviews, rating, colours, image URLs, seller store and creation date. CSV, Parquet and JSON Lines. Free for evaluation, research and journalism with attribution.",
+      "url": "https://votiakov.com/shein-data/",
+      "creator": { "@id": "https://votiakov.com/#person" },
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-11",
+      "spatialCoverage": "United States",
+      "keywords": ["SHEIN dataset", "SHEIN data sample", "SHEIN US products", "fast fashion dataset", "e-commerce dataset"],
+      "distribution": [{ "@type": "DataDownload", "encodingFormat": "application/zip", "contentUrl": "https://votiakov.com/samples/shein-us-sample-10k-2026-11.zip" }]
     },
     {
       "@type": "Dataset",
@@ -94,9 +106,9 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Which SHEIN countries do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "Germany and France were collected in full on 10 November 2026: 3.1 million and 2.7 million products. The UK catalogue was 5.15 million products in October 2026. Other storefronts, such as Spain, Italy, the Netherlands, Poland and the US, are collected on request." } },
+        { "@type": "Question", "name": "Which SHEIN countries do you cover?", "acceptedAnswer": { "@type": "Answer", "text": "The US was collected in full on 11 November 2026: 21 million products. Germany and France were collected on 10 November 2026: 3.1 million and 2.7 million products. The UK catalogue was 5.15 million products in October 2026. Other storefronts, such as Spain, Italy, the Netherlands and Poland, are collected on request." } },
         { "@type": "Question", "name": "How complete is the data?", "acceptedAnswer": { "@type": "Answer", "text": "Coverage is measured for every country. For the UK on 17 October 2026 I collected 98.5% of all products SHEIN listed; the other 1.5% were sold out or off sale at that moment." } },
-        { "@type": "Question", "name": "Can I get a free sample?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Download 10,000 random UK products with every field, in CSV and Parquet, from votiakov.com/samples/shein-uk-sample-10k-2026-10.zip. Germany and France samples (10,000 products each, November 2026) are at votiakov.com/samples/shein-de-sample-10k-2026-11.zip and votiakov.com/samples/shein-fr-sample-10k-2026-11.zip. For a sample from another country, write to me." } },
+        { "@type": "Question", "name": "Can I get a free sample?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Download 10,000 random UK products with every field, in CSV and Parquet, from votiakov.com/samples/shein-uk-sample-10k-2026-10.zip. US, Germany and France samples (10,000 products each, November 2026) are at votiakov.com/samples/shein-us-sample-10k-2026-11.zip, votiakov.com/samples/shein-de-sample-10k-2026-11.zip and votiakov.com/samples/shein-fr-sample-10k-2026-11.zip. For a sample from another country, write to me." } },
         { "@type": "Question", "name": "Is this affiliated with SHEIN?", "acceptedAnswer": { "@type": "Answer", "text": "No. This is independent data collection and analysis. SHEIN is a trademark of its owner." } }
       ]
     }
@@ -127,12 +139,13 @@
   <div class="wrap">
     <p class="crumb"><a href="/">votiakov.com</a> / SHEIN data</p>
     <h1>Every SHEIN product, <span class="serif">country by country.</span></h1>
-    <p class="lede">I collect SHEIN's full product catalogue per country, with the real local price, discount, stock and reviews of every product. For Germany that is 3.1 million products, for France 2.7 million. I sell it as datasets, one full delivery at a time, and through an API.</p>
+    <p class="lede">I collect SHEIN's full product catalogue per country, with the real local price, discount, stock and reviews of every product. For the US that is 21 million products, for Germany 3.1 million. I sell it as datasets, one full delivery at a time, and through an API.</p>
     <div class="btns">
       <a class="btn primary" href="/samples/shein-uk-sample-10k-2026-10.zip">Download a free sample <span class="arr" aria-hidden="true">↓</span></a>
       <a class="btn" href="/reports/shein-by-the-numbers-uk-2026-10.pdf">Free report (PDF) <span class="arr" aria-hidden="true">↓</span></a>
     </div>
     <ul class="facts">
+      <li>US · 21M products</li>
       <li>Germany · 3.1M products</li>
       <li>France · 2.7M products</li>
       <li>UK · 5.15M products</li>
@@ -140,7 +153,7 @@
       <li>Every row dated</li>
       <li>CSV · Parquet · JSON · API</li>
     </ul>
-    <p class="muted">Free sample: 10,000 random UK products with every field, CSV and Parquet, 7 MB zip. Also for <a href="/samples/shein-de-sample-10k-2026-11.zip">Germany</a> and <a href="/samples/shein-fr-sample-10k-2026-11.zip">France</a> (November 2026).</p>
+    <p class="muted">Free sample: 10,000 random UK products with every field, CSV and Parquet, 7 MB zip. Also for the <a href="/samples/shein-us-sample-10k-2026-11.zip">US</a>, <a href="/samples/shein-de-sample-10k-2026-11.zip">Germany</a> and <a href="/samples/shein-fr-sample-10k-2026-11.zip">France</a> (November 2026).</p>
   </div>
 </section>
 
@@ -247,12 +260,11 @@
       <p>If yours is not here, write to me.</p>
     </div>
     <div class="faq">
-      <details><summary>Which SHEIN countries do you cover?</summary><p>Germany and France were collected in full on 10 November 2026: 3.1 million and 2.7 million products. The UK catalogue was 5.15 million products in October 2026. Other storefronts, such as Spain, Italy, the Netherlands, Poland and the US, are collected on request.</p></details>
+      <details><summary>Which SHEIN countries do you cover?</summary><p>The US was collected in full on 11 November 2026: 21 million products. Germany and France were collected on 10 November 2026: 3.1 million and 2.7 million products. The UK catalogue was 5.15 million products in October 2026. Other storefronts, such as Spain, Italy, the Netherlands and Poland, are collected on request.</p></details>
       <details><summary>How complete is the data?</summary><p>Coverage is measured for every country. For the UK on 17 October 2026 I collected 98.5% of all products SHEIN listed; the other 1.5% were sold out or off sale at that moment.</p></details>
       <details><summary>How fresh is it?</summary><p>Each delivery is a full new collection made for your order, and every row carries the time it was collected. I do not sell older records as new.</p></details>
-      <details><summary>Can I get a free sample?</summary><p>Yes. <a href="/samples/shein-uk-sample-10k-2026-10.zip">Download 10,000 random UK products</a> with every field, in CSV and Parquet (7 MB zip), or get it on <a href="https://github.com/votiakov/shein-dataset" rel="noopener">GitHub</a>, <a href="https://huggingface.co/datasets/votiakov/shein-uk-products-sample" rel="noopener">Hugging Face</a> or <a href="https://www.kaggle.com/datasets/votiakov/shein-uk-products-sample" rel="noopener">Kaggle</a>. There are also 10,000-product samples for <a href="/samples/shein-de-sample-10k-2026-11.zip">Germany</a> and <a href="/samples/shein-fr-sample-10k-2026-11.zip">France</a>, collected in November 2026. For a sample from another country, write to me.</p></details>
+      <details><summary>Can I get a free sample?</summary><p>Yes. <a href="/samples/shein-uk-sample-10k-2026-10.zip">Download 10,000 random UK products</a> with every field, in CSV and Parquet (7 MB zip), or get it on <a href="https://github.com/votiakov/shein-dataset" rel="noopener">GitHub</a>, <a href="https://huggingface.co/datasets/votiakov/shein-uk-products-sample" rel="noopener">Hugging Face</a> or <a href="https://www.kaggle.com/datasets/votiakov/shein-uk-products-sample" rel="noopener">Kaggle</a>. There are also 10,000-product samples for the <a href="/samples/shein-us-sample-10k-2026-11.zip">US</a>, <a href="/samples/shein-de-sample-10k-2026-11.zip">Germany</a> and <a href="/samples/shein-fr-sample-10k-2026-11.zip">France</a>, collected in November 2026. For a sample from another country, write to me.</p></details>
       <details><summary>What does it cost?</summary><p>$0.95 per 1,000 products per delivery, with a $750 minimum. Each repeat delivery of the same data costs 20% less. The full Germany catalogue is about $2,970. Every delivery is invoiced on its own once it is ready, with no contract, no prepayment and no minimum term.</p></details>
-      <details><summary>Can you guarantee future deliveries?</summary><p>No. Collection depends on SHEIN's site staying accessible, and that is not in my hands. This is why there are no subscriptions: you pay only for a delivery you have received.</p></details>
       <details><summary>Is this affiliated with SHEIN?</summary><p>No. This is independent data collection and analysis. SHEIN is a trademark of its owner.</p></details>
     </div>
   </div>
