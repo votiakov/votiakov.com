@@ -49,7 +49,7 @@
         <li class="opt"><a href="#work">Work</a></li>
         <li class="opt"><a href="#approach">Approach</a></li>
         <li class="opt"><a href="#now">Now</a></li>
-        <li class="opt"><a href="/shein-data/">SHEIN data</a></li>
+        <li class="opt"><a href="https://cartpie.com/datasets/shein">SHEIN data</a></li>
         <li><a class="cta" href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -75,19 +75,19 @@
     </div>
 
     <aside class="panel demo" aria-labelledby="demo-h">
-      <div class="panel-head"><span>Cartpie · my product data API</span><span class="live">200 OK · 412 ms</span></div>
-      <h2 id="demo-h">Any product URL in. Clean JSON out.</h2>
-      <div class="req"><span class="verb">POST</span><span class="path">/v1/extract</span><span class="url"><span class="typed">ikea.com/…/poang-armchair</span></span></div>
+      <div class="panel-head"><span>Cartpie · free product lookup</span><span class="live">200 OK</span></div>
+      <h2 id="demo-h">A product URL in. Clean JSON out.</h2>
+      <div class="req"><span class="verb">Lookup</span><span class="url"><span class="typed">primark.com/…/joggers-navy</span></span></div>
       <div class="page" aria-hidden="true">
-        <div class="pg-bar"><i></i><i></i><i></i><span>ikea.com/…/poang-armchair</span></div>
+        <div class="pg-bar"><i></i><i></i><i></i><span>primark.com/…/joggers-navy</span></div>
         <div class="pg-body">
           <div class="pg-img fld d0">
-            <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M20 62 C18 40 22 22 34 16 C44 12 52 18 54 30 L56 46 L64 50 L60 62 Z" class="ch"/><path d="M24 62 L16 72 M58 62 L66 72" class="cl"/></svg>
+            <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M26 12 H54 L58 70 H45 L40 34 L35 70 H22 Z" class="ch"/><path d="M38 13 L37 21 M42 13 L43 21" class="cl"/></svg>
           </div>
           <div class="pg-info">
-            <span class="fld f-brand d1">IKEA</span>
-            <span class="fld f-title d3">POÄNG Armchair, birch</span>
-            <span class="fld f-price d5">£129.00</span>
+            <span class="fld f-brand d1">Primark</span>
+            <span class="fld f-title d3">Essential Cargo Joggers</span>
+            <span class="fld f-price d5">£12.00</span>
             <span class="fld f-stock d7">In stock</span>
             <span class="skel"></span><span class="skel s2"></span>
           </div>
@@ -95,19 +95,19 @@
         <div class="beam"></div>
       </div>
       <pre class="json"><code><span class="j d0">{ <i class="k">"data"</i>: {</span>
-<span class="j d2">    <i class="k">"title"</i>: <i class="s">"POÄNG Armchair, birch"</i>,</span>
-<span class="j d4">    <i class="k">"price"</i>: <i class="s">"129.00"</i>,</span>
+<span class="j d2">    <i class="k">"title"</i>: <i class="s">"Essential Cargo Joggers"</i>,</span>
+<span class="j d4">    <i class="k">"price"</i>: <i class="s">"12.00"</i>,</span>
 <span class="j d6">    <i class="k">"currency"</i>: <i class="s">"GBP"</i>,</span>
-<span class="j d8">    <i class="k">"availability"</i>: <i class="s">"InStock"</i>,</span>
-<span class="j d9">    <i class="k">"brand"</i>: <i class="s">"IKEA"</i>,</span>
-<span class="j d10">    <i class="k">"gtin"</i>: <i class="s">"07391440264259"</i></span>
-<span class="j d11">  }, <i class="k">"meta"</i>: { <i class="k">"duration_ms"</i>: <i class="n">412</i> } }</span></code></pre>
+<span class="j d8">    <i class="k">"availability"</i>: <i class="s">"inStock"</i>,</span>
+<span class="j d9">    <i class="k">"brand"</i>: <i class="s">"Primark"</i>,</span>
+<span class="j d10">    <i class="k">"color"</i>: <i class="s">"navy"</i></span>
+<span class="j d11">  }, <i class="k">"meta"</i>: { <i class="k">"cached"</i>: <i class="n">false</i> } }</span></code></pre>
       <div class="panel-stats">
-        <div><b>20+</b><span>tuned retailers, one schema</span></div>
-        <div><b>412 ms</b><span>for this product</span></div>
-        <div><b>Free</b><span>failures and cache hits</span></div>
+        <div><b>Free</b><span>lookups, no sign-up</span></div>
+        <div><b>$0.95</b><span>per 1,000 records as files</span></div>
+        <div><b>17</b><span>Primark countries, local prices</span></div>
       </div>
-      <a class="panel-link" href="https://cartpie.com" rel="noopener">Try it on cartpie.com ↗</a>
+      <a class="panel-link" href="https://cartpie.com/playground" rel="noopener">Try a product on cartpie.com ↗</a>
     </aside>
   </div>
 </section>
@@ -140,7 +140,7 @@
         <div class="shot"><div class="bar"><i></i><i></i><i></i><span>cartpie.com</span></div><img src="/assets/products/cartpie.webp" width="1200" height="750" loading="lazy" alt="Cartpie homepage: any product URL in, clean structured data out"></div>
         <div class="body">
           <div class="top"><h3>Cartpie</h3><span class="tag">Founder</span></div>
-          <p>An API and MCP server for product data. Send any product URL and get the price, availability, variants and GTIN back as JSON. Four extraction methods run in parallel and the most confident result wins.</p>
+          <p>Retail product data as files. Full SHEIN catalogues for the US, UK, Germany and France, Primark in 17 countries, and custom collections for the retailers you name, at $0.95 per 1,000 records. You can check any SHEIN or Primark product free before buying.</p>
           <span class="go">cartpie.com ↗</span>
         </div>
       </a>
@@ -169,13 +169,13 @@
         </div>
       </a>
     </div>
-    <a class="feature" href="/shein-data/">
+    <a class="feature" href="https://cartpie.com/datasets/shein" rel="noopener">
       <div>
-        <span class="k">Datasets · category packs · API</span>
+        <span class="k">Datasets · category packs · free samples</span>
         <h3>SHEIN product data, country by country</h3>
-        <p>Full SHEIN catalogues by country with real local prices: 21 million products in the US, 3.1 million in Germany, 2.7 million in France, 5.15 million in the UK. Plus a free report on what the data shows.</p>
+        <p>Full SHEIN catalogues by country with real local prices: 21 million products in the US, 3.1 million in Germany, 2.7 million in France, 5.15 million in the UK. Free samples and research on Cartpie.</p>
       </div>
-      <span class="go">SHEIN data →</span>
+      <span class="go">SHEIN data on cartpie.com ↗</span>
     </a>
     <p class="also"><b>Apify Store</b><span>Scrapers I publish and maintain: SHEIN products, job data from ATS systems, app reviews and Google Trends.</span><a href="https://apify.com/native_emblem" rel="noopener">apify.com ↗</a></p>
   </div>
@@ -278,10 +278,10 @@
   <div class="wrap split">
     <div class="card">
       <h3 id="now-h">Now</h3>
-      <p class="when">Updated October 2026 · Łódź, Poland</p>
+      <p class="when">Updated November 2026 · Łódź, Poland</p>
       <ul class="now">
-        <li><span><b>Building Cartpie</b>, a product data API and MCP server.</span></li>
-        <li><span><b>Selling <a href="/shein-data/">SHEIN data</a></b>: full catalogues by country, with local prices.</span></li>
+        <li><span><b>Building Cartpie</b>: retail product datasets and custom data collection.</span></li>
+        <li><span><b>Selling <a href="https://cartpie.com/datasets/shein">SHEIN data</a></b>: full catalogues by country, with local prices.</span></li>
         <li><span><b>Co-founding Fabla</b>, AI content planning for small brands, in closed beta.</span></li>
         <li><span><b>Fractional CTO</b> for small companies in e-commerce, property and logistics, mieszkanko among them.</span></li>
         <li><span><b>Cutting cloud bills</b> through reducecost.cloud, paid from the savings.</span></li>
