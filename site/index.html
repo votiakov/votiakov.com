@@ -63,7 +63,7 @@
     <div>
       <p class="status"><span class="dot" aria-hidden="true"></span>CTO, Engineering and fractional work</p>
       <h1 class="headline" id="h1">I scrape the web at scale, build software products and <span class="serif">cut cloud bills.</span></h1>
-      <p class="intro">I'm a lead engineer and former CTO. I've built and run production systems for 10+ years: two startups as <b>founding engineer</b>, an award-winning UK insurer as <b>CTO</b>, and a data platform that reads <b>30,000+ online shops</b>.</p>
+      <p class="intro">I'm a lead engineer and former CTO. I've built and run production systems for 10+ years: two startups as <b>founding engineer</b>, an award-winning UK insurer as <b>CTO</b>, and a data platform that reads <b>30,000+ online shops</b>. Now I run <a href="https://cartpie.com">Cartpie</a>, which sells whole retailer catalogues as data files.</p>
       <div class="btns">
         <a class="btn primary" href="#contact">Work with me <span class="arr" aria-hidden="true">→</span></a>
         <a class="btn" href="#built">See what I build <span class="arr" aria-hidden="true">↓</span></a>
@@ -75,39 +75,29 @@
     </div>
 
     <aside class="panel demo" aria-labelledby="demo-h">
-      <div class="panel-head"><span>Cartpie · free product lookup</span><span class="live">200 OK</span></div>
-      <h2 id="demo-h">A product URL in. Clean JSON out.</h2>
-      <div class="req"><span class="verb">Lookup</span><span class="url"><span class="typed">primark.com/…/joggers-navy</span></span></div>
-      <div class="page" aria-hidden="true">
-        <div class="pg-bar"><i></i><i></i><i></i><span>primark.com/…/joggers-navy</span></div>
-        <div class="pg-body">
-          <div class="pg-img fld d0">
-            <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M26 12 H54 L58 70 H45 L40 34 L35 70 H22 Z" class="ch"/><path d="M38 13 L37 21 M42 13 L43 21" class="cl"/></svg>
-          </div>
-          <div class="pg-info">
-            <span class="fld f-brand d1">Primark</span>
-            <span class="fld f-title d3">Essential Cargo Joggers</span>
-            <span class="fld f-price d5">£12.00</span>
-            <span class="fld f-stock d7">In stock</span>
-            <span class="skel"></span><span class="skel s2"></span>
-          </div>
-        </div>
-        <div class="beam"></div>
+      <div class="panel-head"><span>Cartpie · real rows</span><span class="live">Nov 2026</span></div>
+      <h2 id="demo-h">A whole store in one file.</h2>
+      <div class="req"><span class="verb">Snapshot</span><span class="url"><span class="typed">us.shein.com: all products</span></span></div>
+      <div class="page sheet">
+        <div class="pg-bar" aria-hidden="true"><i></i><i></i><i></i><span>shein_us_products_2026-11-11.parquet</span></div>
+        <table class="rows" aria-label="Five rows from the SHEIN US catalogue, 11 November 2026">
+          <thead><tr><th scope="col">Product</th><th scope="col">Price</th><th scope="col">Was</th><th scope="col">Off</th></tr></thead>
+          <tbody>
+            <tr class="d2"><td>DAZY Polka Dot Puff Sleeve Blouse<small>Women Apparel</small></td><td>$12.89</td><td><s>$16.39</s></td><td><em>−21%</em></td></tr>
+            <tr class="d4"><td>1PC Western Cowboy Vintage Belt<small>Apparel Accessories</small></td><td>$6.72</td><td><s>$9.20</s></td><td><em>−27%</em></td></tr>
+            <tr class="d6"><td>Mini Broom Set<small>Home &amp; Living</small></td><td>$8.00</td><td><s>$18.70</s></td><td><em>−57%</em></td></tr>
+            <tr class="d8"><td>Corner Sofa Corduroy -Blue<small>Tools &amp; Home Improvement</small></td><td>$184.90</td><td><s>$341.80</s></td><td><em>−46%</em></td></tr>
+            <tr class="d10"><td>Lace Trimmed Fitted Blazer<small>Women Apparel</small></td><td>$26.99</td><td><s>$360.35</s></td><td><em>−93%</em></td></tr>
+          </tbody>
+        </table>
+        <div class="beam" aria-hidden="true"></div>
       </div>
-      <pre class="json"><code><span class="j d0">{ <i class="k">"data"</i>: {</span>
-<span class="j d2">    <i class="k">"title"</i>: <i class="s">"Essential Cargo Joggers"</i>,</span>
-<span class="j d4">    <i class="k">"price"</i>: <i class="s">"12.00"</i>,</span>
-<span class="j d6">    <i class="k">"currency"</i>: <i class="s">"GBP"</i>,</span>
-<span class="j d8">    <i class="k">"availability"</i>: <i class="s">"inStock"</i>,</span>
-<span class="j d9">    <i class="k">"brand"</i>: <i class="s">"Primark"</i>,</span>
-<span class="j d10">    <i class="k">"color"</i>: <i class="s">"navy"</i></span>
-<span class="j d11">  }, <i class="k">"meta"</i>: { <i class="k">"cached"</i>: <i class="n">false</i> } }</span></code></pre>
       <div class="panel-stats">
-        <div><b>Free</b><span>lookups, no sign-up</span></div>
-        <div><b>$0.95</b><span>per 1,000 records as files</span></div>
+        <div><b>21M+</b><span>SHEIN products in the US file</span></div>
         <div><b>17</b><span>Primark countries, local prices</span></div>
+        <div><b>$0.95</b><span>per 1,000 records, no minimum</span></div>
       </div>
-      <a class="panel-link" href="https://cartpie.com/playground" rel="noopener">Try a product on cartpie.com ↗</a>
+      <p class="panel-links"><a class="panel-link" href="https://cartpie.com/datasets/shein/sample" rel="noopener">Free 10,000-row samples ↗</a><a class="panel-link" href="https://cartpie.com/playground" rel="noopener">Check a product free ↗</a></p>
     </aside>
   </div>
 </section>
@@ -137,10 +127,10 @@
     </div>
     <div class="products">
       <a class="product" href="https://cartpie.com" rel="noopener">
-        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>cartpie.com</span></div><img src="/assets/products/cartpie.webp" width="1200" height="750" loading="lazy" alt="Cartpie homepage: any product URL in, clean structured data out"></div>
+        <div class="shot"><div class="bar"><i></i><i></i><i></i><span>cartpie.com</span></div><img src="/assets/products/cartpie.webp" width="1200" height="750" loading="lazy" alt="Cartpie homepage: complete product data from hard retailers, full catalogues as files at $0.95 per 1,000 records, with real SHEIN rows"></div>
         <div class="body">
           <div class="top"><h3>Cartpie</h3><span class="tag">Founder</span></div>
-          <p>Retail product data as files. Full SHEIN catalogues for the US, UK, Germany and France, Primark in 17 countries, and custom collections for the retailers you name, at $0.95 per 1,000 records. You can check any SHEIN or Primark product free before buying.</p>
+          <p>Retail product data as files: full SHEIN catalogues for the US, UK, Germany and France, Primark in 17 countries, and custom collections for the retailers you name, at $0.95 per 1,000 records. You can check any SHEIN or Primark product free before buying. Strangest find so far: two hair dyes listed at $18 billion on SHEIN US.</p>
           <span class="go">cartpie.com ↗</span>
         </div>
       </a>
