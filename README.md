@@ -2,12 +2,12 @@
 
 Personal site of Andrii Votiakov. Static HTML and one CSS file, no build step, no trackers.
 
-- `site/index.html`: the home page. Hero with an animated Cartpie lookup demo (a real Primark product, as the free playground on cartpie.com returns it), six numbers, products (Cartpie, Fabla, mieszkanko, reducecost.cloud, a SHEIN data strip, Apify), three company stories with outcome visuals, how I work, now, writing, contact, background.
+- `site/index.html`: the home page. Hero with a Cartpie dataset panel (five real rows from the SHEIN US file of 11 November 2026, lit up by a scan line; swap them when a newer snapshot ships), six numbers, products (Cartpie, Fabla, mieszkanko, reducecost.cloud, a SHEIN data strip, Apify), three company stories with outcome visuals, how I work, now, writing, contact, background.
 - `site/shein-data/index.html`: since 2026-11-12 an instant redirect (meta refresh plus canonical) to cartpie.com/datasets/shein. cartpie.com is the only place that sells and describes the data; this site links to it and carries no Dataset structured data. The old page is in git history. `og.png` stays for old shares.
 - `site/samples/`: the SHEIN sample zips. Keep them: posts and READMEs link here. cartpie.com hosts identical copies under `/samples/`.
 - `site/reports/`: downloadable reports, such as `shein-by-the-numbers-uk-2026-10.pdf`.
 - `site/assets/site.css`: the design system (light and dark, self-hosted Inter, Instrument Serif and JetBrains Mono).
-- `site/assets/products/`: product screenshots (1200×750 WebP). Re-take them when a product site changes.
+- `site/assets/products/`: product screenshots (1200×750 WebP). Re-take them when a product site changes: headless Chrome with `--window-size=1200,750 --virtual-time-budget=15000 --enable-unsafe-swiftshader --use-angle=swiftshader` (without the swiftshader flags the animated hero panels stay blank), then `cwebp -q 82`. Cartpie was re-taken on 2026-11-13.
 - `tools/og-card.html`, `tools/og-shein.html` and `tools/render.sh`: rebuild `site/og-image.png` and `site/shein-data/og.png` with headless Chrome. The favicons are the portrait on the accent colour.
 - `RESEARCH.md`: what the best engineer and CTO sites do, and how this site uses it.
 - `DEPLOY.md`: how to publish on GitHub Pages or Cloudflare Pages, with the DNS records.
