@@ -7,7 +7,7 @@ Personal site of Andrii Votiakov. Static HTML and one CSS file, no build step, n
 - `site/samples/`: the SHEIN sample zips. Keep them: posts and READMEs link here. cartpie.com hosts identical copies under `/samples/`.
 - `site/reports/`: downloadable reports, such as `shein-by-the-numbers-uk-2026-10.pdf`.
 - `site/assets/site.css`: the design system (light and dark, self-hosted Inter, Instrument Serif and JetBrains Mono).
-- `site/assets/products/`: product screenshots (1200×750 WebP). Re-take them when a product site changes: headless Chrome with `--window-size=1200,750 --virtual-time-budget=15000 --enable-unsafe-swiftshader --use-angle=swiftshader` (without the swiftshader flags the animated hero panels stay blank), then `cwebp -q 82`. Cartpie was re-taken on 2026-11-13.
+- `site/assets/products/`: product screenshots (1200×750 WebP). Re-take them when a product site changes: headless Chrome with `--window-size=1200,750 --virtual-time-budget=15000 --enable-unsafe-swiftshader --use-angle=swiftshader` (without the swiftshader flags the animated hero panels stay blank), then `cwebp -q 82`. For Cartpie, hide the floating "Contact us" button and the scrollbar before the shot, or the button covers the data panel. Cartpie was re-taken on 2026-11-13 with the new logo.
 - `tools/og-card.html`, `tools/og-shein.html` and `tools/render.sh`: rebuild `site/og-image.png` and `site/shein-data/og.png` with headless Chrome. The favicons are the portrait on the accent colour.
 - `RESEARCH.md`: what the best engineer and CTO sites do, and how this site uses it.
 - `DEPLOY.md`: how to publish on GitHub Pages or Cloudflare Pages, with the DNS records.
